@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+@use './styles/mixins.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+  font-family: "DM Sans", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--opaque-white);
+}
+
+:root {
+  --max-width: 1740px;
+
+  --main-gray: #BFBFBF;
+  --main-black: #121315;
+  --main-white: #EEEEEE;
+  --main-orange: #F86901;
+  --light-black: #FFFFFF;
+  --light-white: #FFFFFF;
+  --dark-gray: #59595B;
+
+  --fs-900: 6rem;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth !important;
+}
+
+body {
+  font-size: 1.6rem;
+  overflow-x: hidden;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--main-black);
+  color: var(--main-white);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+h1 {
+  @include custom-heading(var(--fs-900), var(--fs-900));
+}
+
+h2 {
+  @extend h1;
+
+  @include custom-breakpoint(500) {
+    // @include custom-heading(var(--fs-500), var(--fs-500));
+  }
+}

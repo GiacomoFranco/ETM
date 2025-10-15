@@ -1,0 +1,87 @@
+/* Main Breakpoints
+--------------------------------------------- */
+
+@mixin for-phone-only {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin for-small-tablet-portrait {
+  @media (max-width: 700px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin custom-breakpoint($breakpoint) {
+  @media (max-width: #{$breakpoint}px) {
+    @content;
+  }
+}
+
+@mixin custom-breakpoint-height($breakpoint) {
+  @media (max-height: #{$breakpoint}px) {
+    @content;
+  }
+}
+
+@mixin custom-breakpoint-or($f-measurement, $f-breakpoint, $s-measurement, $s-breakpoint) {
+  @if $f-measurement =='w' and $s-measurement =='w' {
+
+    @media (max-width: #{$f-breakpoint}px),
+    (max-width: #{$s-breakpoint}px) {
+      @content;
+    }
+  }
+
+  @else if $f-measurement =='w' and $s-measurement =='h' {
+
+    @media (max-width: #{$f-breakpoint}px),
+    (max-height: #{$s-breakpoint}px) {
+      @content;
+    }
+  }
+
+  @else if $f-measurement =='h' and $s-measurement =='w' {
+
+    @media (max-height: #{$f-breakpoint}px),
+    (max-width: #{$s-breakpoint}px) {
+      @content;
+    }
+  }
+
+  @else if $f-measurement =='h' and $s-measurement =='h' {
+
+    @media (max-height: #{$f-breakpoint}px),
+    (max-height: #{$s-breakpoint}px) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Invalid combination of breakpoint types. Please use 'h' or 'w'.";
+  }
+}
+
+@mixin custom-heading($size, $line-height) {
+  font-size: #{$size};
+  line-height: calc(#{$size} + .1rem);
+}
