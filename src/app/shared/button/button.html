@@ -1,0 +1,16 @@
+@if(link()) {
+  <a [href]="link()" [class]="buttonStyle().class">{{ text() }}
+    @if(icon()){
+      <app-icon [name]="icon()!" [colorName]="buttonStyle().iconColor"/>
+    }
+  </a>
+
+}
+
+@else {
+  <button [class]="buttonStyle().class">{{ text() }}
+    @if(icon()){
+      <app-icon [name]="icon()!" [colorName]="buttonStyle().iconColor"/>
+    }
+  </button>
+}
