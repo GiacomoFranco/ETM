@@ -8,9 +8,12 @@ a, button {
   border-radius: 99.9rem;
   cursor: pointer;
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 2.5rem;
+  flex-grow: 1;
 
-  font-size: 15;
+  font-size: 1.5rem;
   font-weight: 400;
 }
 

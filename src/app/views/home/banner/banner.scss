@@ -1,0 +1,47 @@
+@import 'mixins';
+
+:host {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  justify-content: center;
+
+  background-image: url('src/assets/images/banner.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+}
+
+section {
+  align-items: flex-end;
+  padding: 12.5rem 0;
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3.7rem;
+  max-width: 70.5rem;
+
+  p {
+    margin-bottom: 3.3rem;
+
+    @include custom-breakpoint(600) {
+      margin-bottom: 0rem;
+    }
+  }
+
+  .call-to-action {
+    display: flex;
+    gap: 2rem 3.9rem;
+
+    flex-wrap: wrap;
+
+    @include custom-breakpoint(450) {
+      app-button {
+        display: flex;
+        flex-grow: 1;
+      }
+    }
+  }
+}
