@@ -1,0 +1,50 @@
+@use 'mixins' as *;
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 90rem;
+  padding-top: 21rem;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 3.7rem 3rem;
+  flex-wrap: wrap;
+  flex-grow: 1;
+
+  h2 {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0;
+    max-width: 84.2rem;
+    min-width: none;
+  }
+
+  p {
+    color: var(--dark-gray);
+    flex-grow: 1;
+    flex-shrink: 5;
+    flex-basis: 0;
+    max-width: 71.4rem;
+
+    b {
+      color: inherit;
+    }
+  }
+
+  @include custom-breakpoint(1300) {
+    flex-direction: column;
+
+    h2 {
+      max-width: none;
+      text-wrap: balance  ;
+    }
+
+    p {
+      max-width: 1900rem;
+    }
+  }
+}
