@@ -18,7 +18,7 @@
   --main-black: #121315;
   --main-white: #EEEEEE;
   --main-orange: #F86901;
-  --light-black: #FFFFFF;
+  --light-black: #1A1B1D;
   --light-white: #FFFFFF;
   --dark-gray: #848484;
   --darker-gray: #59595B;
@@ -51,7 +51,7 @@ body {
   width: 100vw;
   min-height: 100vh;
   background-color: var(--main-white);
-  color: var(--main-white);
+  color: var(--main-black);
 
   &::-webkit-scrollbar {
     display: none;
@@ -82,4 +82,19 @@ p {
 
 b {
   font-weight: 700;
+  color: inherit;
 }
+
+.white-text {
+  color: var(--main-white);
+}
+
+.black-text {
+  color: var(--main-black);
+}
+
+.gray-text {
+  color: var(--dark-gray);
+}
+
+

@@ -24,15 +24,10 @@
   }
 
   p {
-    color: var(--dark-gray);
     flex-grow: 1;
     flex-shrink: 5;
     flex-basis: 0;
     max-width: 71.4rem;
-
-    b {
-      color: inherit;
-    }
   }
 
   @include custom-breakpoint(1300) {
