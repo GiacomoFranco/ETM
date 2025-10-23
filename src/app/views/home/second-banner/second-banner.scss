@@ -1,0 +1,53 @@
+:host {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 61rem;
+  background-image: url('src/assets/images/second-banner.webp');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 19, 21, 0.9);
+    z-index: 0;
+  }
+}
+
+section {
+  z-index: 1;
+  max-width: 142rem;
+  justify-content: center;
+
+  .banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7.6rem;
+
+    h2 {
+      text-wrap: balance;
+      text-align: center;
+    }
+
+    .call-to-action {
+      display: flex;
+      gap: 3.6rem;
+      flex-wrap: wrap;
+
+      app-button {
+        display: flex;
+        flex-grow: 1;
+      }
+    }
+  }
+}
+

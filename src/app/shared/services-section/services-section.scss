@@ -6,6 +6,7 @@
   align-items: flex-start;
   min-height: 90rem;
   padding-top: 21rem;
+  background-color: var(--main-black);
 }
 
 .section-heading {
@@ -20,7 +21,6 @@
     flex-shrink: 0;
     flex-basis: 0;
     max-width: 84.2rem;
-    min-width: none;
   }
 
   p {

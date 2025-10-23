@@ -50,7 +50,7 @@ body {
   overflow-x: hidden;
   width: 100vw;
   min-height: 100vh;
-  background-color: var(--main-black);
+  background-color: var(--main-white);
   color: var(--main-white);
 
   &::-webkit-scrollbar {
@@ -71,11 +71,7 @@ h1 {
 }
 
 h2 {
-  @include custom-heading(var(--fs-800), var(--fs-800));
-
-  // @include custom-breakpoint(500) {
-  //   @include custom-heading(var(--fs-500), var(--fs-500));
-  // }
+  @extend h1;
 }
 
 p {

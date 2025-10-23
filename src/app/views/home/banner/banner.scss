@@ -15,34 +15,35 @@
 section {
   align-items: flex-end;
   padding-top: 12.5rem;
-}
 
-.banner-content {
-  display: flex;
-  flex-direction: column;
-  gap: 3.7rem;
-  max-width: 70.5rem;
-  padding: 0 0 6.519% 0;
-
-  p {
-    margin-bottom: 3.3rem;
-
-    @include custom-breakpoint(600) {
-      margin-bottom: 0rem;
-    }
-  }
-
-  .call-to-action {
+  .banner-content {
     display: flex;
-    gap: 2rem 3.9rem;
+    flex-direction: column;
+    gap: 3.7rem;
+    max-width: 70.5rem;
+    padding: 0 0 6.519% 0;
 
-    flex-wrap: wrap;
+    p {
+      margin-bottom: 3.3rem;
 
-    @include custom-breakpoint(450) {
-      app-button {
-        display: flex;
-        flex-grow: 1;
+      @include custom-breakpoint(600) {
+        margin-bottom: 0rem;
+      }
+    }
+
+    .call-to-action {
+      display: flex;
+      gap: 2rem 3.9rem;
+
+      flex-wrap: wrap;
+
+      @include custom-breakpoint(450) {
+        app-button {
+          display: flex;
+          flex-grow: 1;
+        }
       }
     }
   }
 }
+
