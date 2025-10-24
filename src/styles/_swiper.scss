@@ -1,0 +1,12 @@
+@import 'swiper/css';
+
+@mixin swiper($height) {
+  .swiper {
+    height: #{$height} !important;
+    width: 100%;
+
+    .swiper-slide {
+      height: 100%;
+    }
+  }
+}
