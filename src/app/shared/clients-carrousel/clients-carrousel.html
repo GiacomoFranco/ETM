@@ -1,0 +1,16 @@
+<div class="carousel">
+  <div class="group">
+    @for (client of clients; track $index) {
+    <div class="slide">
+      <img [src]="client.logo" [alt]="client.alt" [style]="client.adjustment ?? ''"/>
+    </div>
+    }
+  </div>
+  <div aria-hidden class="group">
+    @for (client of clients; track $index) {
+    <div class="slide">
+      <img [src]="client.logo" [alt]="client.alt" />
+    </div>
+    }
+  </div>
+</div>

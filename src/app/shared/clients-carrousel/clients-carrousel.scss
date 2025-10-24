@@ -1,0 +1,38 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10.1rem;
+}
+
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  pointer-events: none;
+  user-select: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .group {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    gap: 13.2rem;
+    padding-right: 13.2rem;
+    animation: spin 30s infinite linear;
+
+    .slide {
+      flex: 0 0 auto;
+      opacity: .3;
+    }
+  }
+}
+
+@keyframes spin {
+  from {translate: 0;}
+  to {translate: -100% ;}
+}
