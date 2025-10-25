@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Button } from "@app/shared";
+import { Button } from "@shared";
 import { RouterLink } from "@angular/router";
 
 @Component({

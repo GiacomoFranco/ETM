@@ -1,9 +1,7 @@
-import { afterNextRender, Component } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { CUSTOMERS } from '@app/core/constants/customers.constant';
 import { Customers } from '@app/core/models';
-import { Autoplay } from 'swiper/modules';
-import Swiper from 'swiper';
 
 
 @Component({

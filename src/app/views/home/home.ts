@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
-import { ServicesSection } from "@app/shared";
-import { Banner } from './banner/banner';
 import { SecondBanner } from "./second-banner/second-banner";
-import { ClientsCarrousel } from "@app/shared/clients-carrousel/clients-carrousel";
+import { ServicesSection, ClientsCarrousel} from '@shared';
+import { Banner } from './banner/banner';
 
 @Component({
   selector: 'app-home',
