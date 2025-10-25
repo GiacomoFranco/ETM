@@ -4,7 +4,7 @@ import { Header } from "./header/header";
 
 @Component({
   selector: 'app-layout',
-  imports: [Footer, Header],
+  // imports: [Footer, Header],
   templateUrl: './layout.html',
   styleUrl: './layout.scss'
 })

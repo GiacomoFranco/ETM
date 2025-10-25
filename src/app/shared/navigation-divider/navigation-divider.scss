@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+  align-items: center;
+  gap: 4.1rem;
+  flex-wrap: wrap;
+}
+
+h4 {
+  color: var(--dark-gray);
+  font-weight: 400;
+  font-size: 2.7rem;
+  flex: 0 0 content;
+}
+
+.loading-bar {
+  flex: 1 1 0;
+  position: relative;
+  width: 100%;
+  height: .1rem;
+  background-color: var(--darker-gray);
+  border-radius: .1rem;
+}
+
+.loading-bar__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  background-color: var(--light-white);
+  border-radius: .1rem;
+}
+
+.swiper-controls {
+  display: flex;
+  gap: 3.5rem;
+}
