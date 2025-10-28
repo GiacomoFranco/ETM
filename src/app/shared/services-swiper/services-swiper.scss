@@ -1,3 +1,13 @@
 @use 'swiper' as *;
+@use 'swiper/css/effect-fade' as *;
 
-@include swiper(10rem);
+@include swiper(43.2rem);
+
+:host {
+  margin: 0 !important;
+  position: relative;
+}
+
+.swiper {
+  position: absolute;
+}

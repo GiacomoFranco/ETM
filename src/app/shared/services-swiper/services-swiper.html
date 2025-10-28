@@ -1,18 +1,26 @@
-<div class="swiper" [id]="swiperID">
+<!-- <div class="swiper" [id]="swiperID">
   <div class="swiper-wrapper">
-    <!-- @for (service of services; track $index) { -->
+    @for (service of services; track $index) {
     <div class="swiper-slide">
-      <H1>TEST</H1>
-      <!-- {{service.title}} -->
+      {{service.title}}
     </div>
-    <div class="swiper-slide">
-      <H1>TEST</H1>
-      <!-- {{service.title}} -->
-    </div>
-    <div class="swiper-slide">
-      <H1>TEST</H1>
-      <!-- {{service.title}} -->
-    </div>
-    <!-- } -->
+    }
   </div>
-</div>
+</div> -->
+
+  <div class="swiper" [id]="swiperID">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <app-service-card />
+      </div>
+      <div class="swiper-slide">
+        <app-service-card />
+      </div>
+      <div class="swiper-slide">
+        <app-service-card />
+      </div>
+      <div class="swiper-slide">
+        <app-service-card />
+      </div>
+    </div>
+  </div>

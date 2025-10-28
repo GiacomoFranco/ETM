@@ -81,7 +81,7 @@
   }
 }
 
-@mixin custom-heading($size, $line-height) {
+@mixin custom-text($size, $line-height) {
   font-size: #{$size};
   line-height: calc(#{$size} + .1rem);
 }

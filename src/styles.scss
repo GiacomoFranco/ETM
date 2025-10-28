@@ -25,6 +25,7 @@
 
   --fs-900: clamp(3.2rem, 3.9cqi, 6rem);
   --fs-800: clamp(3.2rem, 3cqi, 6rem);
+  --fs-700: clamp(2.2rem, 1.7cqi, 3.2rem);
 }
 
 @media (max-width: 1600px) {
@@ -67,11 +68,15 @@ section {
 
 
 h1 {
-  @include custom-heading(var(--fs-900), var(--fs-900));
+  @include custom-text(var(--fs-900), var(--fs-900));
 }
 
 h2 {
   @extend h1;
+}
+
+h4 {
+  @include custom-text(var(--fs-700), var(--fs-700));
 }
 
 p {

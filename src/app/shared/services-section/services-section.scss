@@ -5,14 +5,16 @@
   justify-content: center;
   align-items: flex-start;
   min-height: 90rem;
-  padding-top: 21rem;
+  padding: 21rem 0 33.8rem 0;
   background-color: var(--main-black);
+  margin-bottom: 25rem;
 }
 
 .services-content {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex: 1 1 auto;
+  max-width: 100%;
   gap: 3.5rem;
 
   .services-heading {
