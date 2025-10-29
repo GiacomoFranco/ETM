@@ -1,15 +1,15 @@
 import { afterNextRender, Component, input, output } from '@angular/core';
 
-import { Button } from "../button/button";
+import { Button } from '../button/button';
 // import { gsap } from "gsap";
 
 @Component({
-  selector: 'app-navigation-divider',
+  selector: 'app-divider',
   imports: [Button],
-  templateUrl: './navigation-divider.html',
-  styleUrl: './navigation-divider.scss'
+  templateUrl: './divider.html',
+  styleUrl: './divider.scss',
 })
-export class NavigationDivider {
+export class Divider {
   // constructor() {
   //   afterNextRender(() => {
   //     gsap.fromTo(
@@ -26,7 +26,10 @@ export class NavigationDivider {
   // }
 
   title = input<string>('Divider');
-  navigationEmitter = output<string>()
+  redirection = input<boolean>(true);
+  buttonText = input<string>('Redirección');
+
+  navigationEmitter = output<string>();
 
   emitNavigationEvent(direction: string): void {
     this.navigationEmitter.emit(direction);
