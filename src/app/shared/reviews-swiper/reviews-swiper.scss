@@ -1,0 +1,22 @@
+@use 'swiper' as *;
+
+.swiper {
+  .swiper-wrapper {
+    transition-timing-function: linear;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      aspect-ratio: 1 / 1;
+      flex-basis: 250rem;
+
+      img {
+        width: 8rem;
+        opacity: .5;
+      }
+    }
+  }
+}
+
+@include swiper(10rem);
