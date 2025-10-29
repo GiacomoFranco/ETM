@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, viewChild } from '@angular/core';
+
 import { NavigationDivider } from '../navigation-divider/navigation-divider';
 import { ServicesSwiper } from "../services-swiper/services-swiper";
 
@@ -8,4 +9,12 @@ import { ServicesSwiper } from "../services-swiper/services-swiper";
   templateUrl: './services-section.html',
   styleUrl: './services-section.scss',
 })
-export class ServicesSection {}
+export class ServicesSection {
+  swiperServicesComponent = viewChild<ServicesSwiper>(ServicesSwiper);
+
+  navigate(direction: string): void {
+    direction === 'next'
+      ? this.swiperServicesComponent()!.navigateToNextGroup()
+      : this.swiperServicesComponent()!.navigateToPrevGroup();
+  }
+}

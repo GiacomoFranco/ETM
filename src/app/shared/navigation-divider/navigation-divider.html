@@ -4,6 +4,6 @@
   </span>
 </span>
 <div class="swiper-controls">
-  <app-button text="" variant="WhiteOutline" icon="left-arrow"/>
-  <app-button text="Siguiente" icon="right-arrow" variant="White"/>
+  <app-button text="" variant="WhiteOutline" icon="left-arrow" (click)="emitNavigationEvent('prev')"/>
+  <app-button text="Siguiente" icon="right-arrow" variant="White" (click)="emitNavigationEvent('next')"/>
 </div>

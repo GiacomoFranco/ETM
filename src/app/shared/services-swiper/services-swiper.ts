@@ -1,9 +1,9 @@
-import { afterNextRender, ChangeDetectorRef, Component, inject, signal } from '@angular/core';
+import { afterNextRender, Component, signal } from '@angular/core';
 
+import { ServiceCard } from "../service-card/service-card";
 import { SERVICES } from '@app/core/constants';
 import { Autoplay } from 'swiper/modules';
 import Swiper from 'swiper';
-import { ServiceCard } from "../service-card/service-card";
 
 @Component({
   selector: 'app-services-swiper',
@@ -18,10 +18,8 @@ export class ServicesSwiper {
     });
   }
 
-  cdr = inject(ChangeDetectorRef)
-  swiper= signal<Swiper | undefined>(undefined);
+  swiper = signal<Swiper | undefined>(undefined);
   swiperID: string = 'services';
-  // allowControls: boolean;
   services = SERVICES;
 
   initSwiper(): void {
@@ -30,9 +28,11 @@ export class ServicesSwiper {
         slidesPerView: 1,
         slidesPerGroup: 1,
         spaceBetween: 10,
+        loop: true,
         modules: [Autoplay],
         autoplay: {
           delay: 5000,
+          pauseOnMouseEnter: true,
         },
         breakpoints: {
           1150: {
@@ -43,5 +43,13 @@ export class ServicesSwiper {
         },
       })
     );
+  }
+
+  navigateToNextGroup() {
+    this.swiper()?.slideNext();
+  }
+
+  navigateToPrevGroup() {
+    this.swiper()?.slidePrev();
   }
 }
