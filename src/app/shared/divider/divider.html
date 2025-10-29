@@ -1,14 +1,14 @@
-<h4>{{ title() }}</h4>
+<h4 [class]="variant() === 'white' ? 'white' : 'black'">{{ title() }}</h4>
 @if (redirection()) {
   <span class="loading-bar loading-bar__outer"></span>
-  <app-button [text]="buttonText()" icon="navigation" variant="White" (click)="emitNavigationEvent('next')" />
+  <app-button [text]="buttonText()" icon="navigation" [variant]="variant() === 'white' ? 'WhiteOutline' : 'BlackOutline'" (click)="emitNavigationEvent('next')" />
 } @else {
-  <span class="loading-bar loading-bar__outer">
-    <span class="loading-bar loading-bar__inner">
+  <span class="loading-bar loading-bar__outer" [class]="variant() === 'white' ? 'white' : 'black'">
+    <span class="loading-bar loading-bar__inner" [class]="variant() === 'white' ? 'white' : 'black'">
     </span>
   </span>
   <div class="swiper-controls">
-    <app-button text="" variant="WhiteOutline" icon="left-arrow" (click)="emitNavigationEvent('prev')" />
-    <app-button text="Siguiente" icon="right-arrow" variant="White" (click)="emitNavigationEvent('next')" />
+    <app-button text="" [variant]="variant() === 'white' ? 'WhiteOutline' : 'BlackOutline'" icon="left-arrow" (click)="emitNavigationEvent('prev')" />
+    <app-button text="Siguiente" icon="right-arrow" [variant]="variant() === 'white' ? 'White' : 'Black'" (click)="emitNavigationEvent('next')" />
   </div>
 }

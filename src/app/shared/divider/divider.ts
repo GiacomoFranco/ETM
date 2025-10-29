@@ -25,6 +25,7 @@ export class Divider {
   //   })
   // }
 
+  variant = input<'white' | 'black'>('white');
   title = input<string>('Divider');
   redirection = input<boolean>(true);
   buttonText = input<string>('Redirección');
