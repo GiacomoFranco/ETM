@@ -1,10 +1,13 @@
-import { afterNextRender, Component, signal } from '@angular/core';
+import { afterNextRender, Component, input, signal } from '@angular/core';
+
+import { ReviewCard } from "../review-card/review-card";
 import { REVIEWS } from '@app/core/constants';
+import { Autoplay } from 'swiper/modules';
 import Swiper from 'swiper';
 
 @Component({
   selector: 'app-reviews-swiper',
-  imports: [],
+  imports: [ReviewCard],
   templateUrl: './reviews-swiper.html',
   styleUrl: './reviews-swiper.scss'
 })
@@ -15,13 +18,35 @@ export class ReviewsSwiper {
     })
   }
 
-  swiperID: string = 'reviews'
+  swiperID = input.required<string>()
   swiper = signal<Swiper | undefined>(undefined)
+  reversedDirection = input<boolean>(false)
   reviews = REVIEWS;
 
   initSwiper(): void {
-    this.swiper.set(new Swiper(`#${this.swiperID}`, {
+    console.log(this.swiperID());
 
+    this.swiper.set(new Swiper(`#${this.swiperID()}`, {
+      slidesPerView: 1,
+      spaceBetween: 27,
+      modules: [Autoplay],
+      loop: true,
+      autoplay: {
+        delay: 0,
+        reverseDirection: this.reversedDirection(),
+        pauseOnMouseEnter: true,
+      },
+      speed: 60000,
+      breakpoints: {
+        1120: {
+          slidesPerView: 2,
+          spaceBetween: 27,
+        },
+        1600: {
+          slidesPerView: 3,
+          spaceBetween: 27,
+        }
+      }
     }))
   }
 }

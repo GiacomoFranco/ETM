@@ -1,0 +1,55 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 3.7rem;
+  background-color: #F9F9F9;
+  height: 100%;
+  padding: 3.8rem 3.2rem 2.3rem 3.2rem;
+  container-type: inline-size;
+  container-name: review-card;
+}
+
+.review-header {
+  display: flex;
+  gap: 1.9rem;
+
+  .client-info {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+
+    h5 {
+      font-size: 1.9rem;
+      font-weight: 300;
+      color: var(--main-black);
+    }
+
+    p {
+      font-size: 1.7rem;
+      line-height: 1.7rem;
+      font-weight: 300;
+      color: var(--darker-gray);
+    }
+  }
+}
+
+.review-content {
+  p {
+    color: #707070;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    line-clamp: 6;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@container (max-width: 560px) {
+  .review-content {
+    p {
+      -webkit-line-clamp: 9;
+      line-clamp: 9;
+    }
+  }
+}

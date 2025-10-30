@@ -1,22 +1,19 @@
 @use 'swiper' as *;
+@use 'mixins' as *;
+
+:host {
+  display: block;
+  width: 100%;
+}
 
 .swiper {
   .swiper-wrapper {
     transition-timing-function: linear;
-
-    div {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      aspect-ratio: 1 / 1;
-      flex-basis: 250rem;
-
-      img {
-        width: 8rem;
-        opacity: .5;
-      }
-    }
   }
 }
 
-@include swiper(10rem);
+@include swiper(34.5rem);
+
+@include custom-breakpoint(500) {
+  @include swiper(43.2rem);
+}
