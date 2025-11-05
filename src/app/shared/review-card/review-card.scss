@@ -1,7 +1,7 @@
 :host {
   display: flex;
   flex-direction: column;
-  gap: 3.7rem;
+  gap: 2.7rem;
   background-color: #F9F9F9;
   height: 100%;
   padding: 3.8rem 3.2rem 2.3rem 3.2rem;
@@ -35,6 +35,7 @@
 
 .review-content {
   p {
+    font-size: clamp(1.8rem, 4cqi, 2rem);
     color: #707070;
     overflow: hidden;
     text-overflow: ellipsis;

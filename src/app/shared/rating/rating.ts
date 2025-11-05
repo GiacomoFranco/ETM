@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 
 @Component({
   selector: 'app-rating',
@@ -8,4 +8,6 @@ import { Component, input } from '@angular/core';
 })
 export class Rating {
   rating = input<number>(0);
+  stars = computed(() => Array(Math.trunc(this.rating())).fill(0));
+  partialStar = computed(() => this.rating() % 1);
 }
