@@ -25,16 +25,12 @@
     flex-grow: 1;
 
     h2 {
-      flex-grow: 1;
-      flex-shrink: 0;
-      flex-basis: 0;
+      flex: 1 0 0;
       max-width: 84.2rem;
     }
 
     p {
-      flex-grow: 1;
-      flex-shrink: 5;
-      flex-basis: 0;
+      flex: 1 5 0;
       max-width: 71.4rem;
     }
 

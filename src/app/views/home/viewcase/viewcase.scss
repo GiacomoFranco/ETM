@@ -1,0 +1,75 @@
+@use 'mixins' as *;
+
+:host {
+  display: flex;
+  justify-content: center;
+  padding-bottom: clamp(1rem, 15.4cqi, 29.3rem);
+}
+
+
+section {
+  gap: 7.6rem;
+  flex-direction: column;
+
+  .viewcase-title {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    gap: 3.7rem 3rem;
+
+
+    h2 {
+      max-width: 91.1rem;
+      flex: 1 0 0;
+    }
+
+    p {
+      max-width: 70.4rem;
+      flex: 1 0 0;
+    }
+  }
+
+  .viewcase-content {
+    width: 100%;
+    height: 0;
+
+    .viewcase-video {
+      background-color: var(--light-black);
+      width: 100%;
+      aspect-ratio: 872/373;
+    }
+  }
+
+  @include custom-breakpoint(1300) {
+    gap: 5.6rem;
+
+    .viewcase-title {
+      flex-direction: column;
+
+      h2 {
+        max-width: none;
+        text-wrap: balance;
+      }
+
+      p {
+        max-width: 1900rem;
+      }
+    }
+
+    .viewcase-content {
+      .viewcase-video {
+        aspect-ratio: 872/500;
+      }
+    }
+
+  }
+
+  @include custom-breakpoint(500) {
+    .viewcase-content {
+      .viewcase-video {
+        aspect-ratio: 872/600;
+      }
+    }
+
+  }
+}
