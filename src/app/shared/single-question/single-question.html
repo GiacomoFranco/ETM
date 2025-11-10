@@ -1,0 +1,9 @@
+<div (click)="toggleQuestion()" class="single-question" [class.active]="toggleStatus()">
+  <div class="question-title">
+    <h2>{{ question() }}</h2>
+    <app-icon name="plus" [colorName]="toggleStatus() ? 'MainBlack' : 'MainGray'"/>
+  </div>
+  <div #panel class="question-answer">
+    <p [innerHTML]="answer()"></p>
+  </div>
+</div>

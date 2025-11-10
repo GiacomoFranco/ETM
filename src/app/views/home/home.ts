@@ -5,10 +5,11 @@ import { ServicesSection, ClientsCarrousel} from '@shared';
 import { Banner } from './banner/banner';
 import { Reviews } from "./reviews/reviews";
 import { Viewcase } from "./viewcase/viewcase";
+import { FaqSection } from "@app/shared/faq-section/faq-section";
 
 @Component({
   selector: 'app-home',
-  imports: [Banner, ServicesSection, SecondBanner, ClientsCarrousel, Reviews, Viewcase],
+  imports: [Banner, ServicesSection, SecondBanner, ClientsCarrousel, Reviews, Viewcase, FaqSection],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })

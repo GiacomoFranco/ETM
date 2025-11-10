@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: flex-start;
   min-height: 90rem;
-  padding: 21rem 0 33.8rem 0;
+  padding: 69.3rem 0 8.3rem;
   background-color: var(--main-black);
   margin-bottom: 25rem;
 }
@@ -14,10 +14,9 @@ section {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  max-width: 100%;
   gap: 3.5rem;
 
-  .services-heading {
+  .faq-heading {
     display: flex;
     justify-content: space-between;
     gap: 3.7rem 3rem;
@@ -26,7 +25,7 @@ section {
 
     h2 {
       flex: 1 0 0;
-      max-width: 84.2rem;
+      max-width: 94rem;
     }
 
     p {
@@ -39,11 +38,29 @@ section {
 
       h2 {
         max-width: none;
-        text-wrap: balance  ;
+        text-wrap: balance;
       }
 
       p {
         max-width: 1900rem;
+      }
+    }
+  }
+
+  .questions {
+    display: flex;
+    gap: 1.2rem 1.5rem;
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      flex: 1 1 auto;
+    }
+
+    @include custom-breakpoint(900) {
+      .left-column {
+        display: none;
       }
     }
   }
