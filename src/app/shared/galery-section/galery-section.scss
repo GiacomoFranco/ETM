@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  justify-content: center;
+  padding: 19.6rem 0 28.4rem 0;
+  background-color: var(--main-black);
+}
+
+section {
+  flex-direction: column;
+  gap: 3.5rem;
+
+  h2 {
+    align-self: center;
+    max-width: 120rem;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .swiper-container {
+    position: relative;
+    left: 50%;
+    height: 0;
+    width: 100vw;
+    margin-left: -50vw;
+  }
+}

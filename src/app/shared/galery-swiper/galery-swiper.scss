@@ -1,0 +1,22 @@
+@use 'swiper' as *;
+@use 'mixins' as *;
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.swiper {
+  .swiper-wrapper {
+    transition-timing-function: linear;
+    .swiper-slide {
+      background-color: var(--light-black);
+    }
+  }
+}
+
+@include swiper(34.5rem);
+
+@include custom-breakpoint(500) {
+  @include swiper(43.2rem);
+}
