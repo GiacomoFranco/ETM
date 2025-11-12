@@ -1,3 +1,5 @@
+@use 'mixins' as *;
+
 :host {
   display: flex;
   justify-content: center;
@@ -14,6 +16,10 @@ section {
     max-width: 120rem;
     text-align: center;
     text-wrap: balance;
+
+    @include custom-breakpoint(700) {
+      text-align: left;
+    }
   }
 
   .swiper-container {

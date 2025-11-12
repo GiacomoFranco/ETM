@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  justify-content: center;
+  padding: 26.1rem 0 31.9rem 0;
+}
+
+section {
+  flex-direction: column;
+  gap: 3.5rem;
+
+  h2 {
+    max-width: 116.6rem;
+  }
+}

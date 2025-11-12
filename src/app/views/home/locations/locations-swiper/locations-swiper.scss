@@ -1,0 +1,8 @@
+@use 'swiper' as *;
+
+@include swiper(47.7rem);
+
+:host {
+  margin: 0 !important;
+  position: relative;
+}
