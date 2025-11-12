@@ -1,0 +1,53 @@
+@use 'mixins' as *;
+
+:host {
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-orange);
+  min-height: clamp(1rem, 27cqi, 50.8rem);
+}
+
+section {
+  align-items: center;
+
+  .call-to-action {
+    max-width: 82.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin: 5rem 0;
+  }
+
+  .image-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    img {
+      position: absolute;
+      top: -5.6cqi;
+      left: 2.5rem;
+      width: clamp(70rem, 118%, 106.2rem);
+    }
+  }
+
+  @include custom-breakpoint(800) {
+    .call-to-action {
+      margin: 8rem 0;
+      max-width: initial;
+
+      h2 {
+        text-align: center;
+        text-wrap: balance;
+      }
+
+      app-button {
+        display: flex;
+      }
+    }
+
+    .image-container {
+      display: none;
+    }
+  }
+}
