@@ -1,0 +1,112 @@
+@use 'mixins' as *;
+
+:host {
+  margin-top: auto;
+  background-color: var(--main-black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .navigator-element {
+    padding: 12.9rem 0 11.2rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+
+    &-container {
+      max-width: var(--max-width);
+      margin: var(--section-margin);
+      flex-wrap: wrap;
+      justify-content: space-between;
+      flex-grow: 1;
+      align-items: start;
+      display: flex;
+      gap:9rem;
+
+      .logo-element {
+        width: 11.9rem;
+      }
+
+      .menu-element {
+        display: flex;
+        justify-content: space-between;
+        max-width: 124.2rem;
+        gap: 3rem;
+        flex-grow: 1;
+        flex-wrap: wrap;
+
+        .links-group {
+          font-size: 1.8rem;
+          flex-shrink: 0;
+
+          @include custom-breakpoint(890) {
+            flex: 1 0 27rem;
+          }
+
+
+          @include custom-breakpoint(672) {
+            flex-basis: 25rem;
+
+            &:nth-child(odd) {
+              flex-basis: 16rem;
+            }
+          }
+
+          h2 {
+            color: var(--main-gray);
+            font-weight: 700;
+            margin-bottom: 2.2rem;
+          }
+
+          .links-element {
+            li {
+              list-style: none;
+              margin-bottom: 1.3rem;
+
+              a {
+                color: #4C4D4E;
+                font-weight: 500;
+                text-decoration: none;
+              }
+
+            }
+          }
+
+          .social-media {
+            display: flex;
+            justify-content: space-between;
+            width: 11.884rem;
+
+            img {
+              scale: .8;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  .rights-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #2F2F30;
+    width: 100%;
+    min-height: 7.5rem;
+    font-size: 1.5rem;
+
+    p {
+      font-size: inherit;
+      font-weight: 400;
+      color: var(--main-gray);
+      opacity: .5;
+
+      span {
+        color: var(--main-white);
+      }
+    }
+  }
+}

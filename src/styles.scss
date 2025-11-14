@@ -79,6 +79,10 @@ h4 {
   @include custom-text(var(--fs-700), var(--fs-700));
 }
 
+.as-h5 {
+  @include custom-text(18px,18px);
+}
+
 p {
   font-weight: 200;
   font-size: 2rem;
