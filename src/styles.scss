@@ -42,7 +42,6 @@
 
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth !important;
 }
 
 body {
@@ -53,6 +52,10 @@ body {
   min-height: 100vh;
   background-color: var(--main-white);
   color: var(--main-black);
+
+  &.no-scroll {
+    overflow: hidden;
+  }
 
   &::-webkit-scrollbar {
     display: none;
