@@ -10,6 +10,24 @@
     border-radius: 1rem;
     transition: color, background-color .3s ease-in-out;
 
+    &.white-variant {
+      background-color: var(--light-white);
+      &.active {
+        background-color: var(--light-black);
+        .question-title {
+          h2 {
+              color: var(--dark-gray);
+            }
+        }
+
+        .question-answer {
+          p {
+            color: var(--darker-gray);
+          }
+        }
+      }
+    }
+
     .question-title {
       display: flex;
       justify-content: space-between;
@@ -19,9 +37,9 @@
       h2 {
         color: var(--dark-gray);
         user-select: none;
-        font-size: 2.5rem;
+        font-size: clamp(2rem, 2.6cqi, 2.5rem);
+        line-height: clamp(2.1rem, 2.6cqi, 2.6rem);
         font-weight: 400;
-        line-height: 2.6rem;
       }
 
       app-icon {
@@ -42,6 +60,8 @@
         margin-top: 2.2rem;
         cursor: text;
         font-weight: 400;
+        font-size: clamp(1.8rem, 2.6cqi, 2rem);
+        line-height: clamp(2rem, 2.6cqi, 2.1rem);
       }
     }
 

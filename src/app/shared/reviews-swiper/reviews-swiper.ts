@@ -24,8 +24,6 @@ export class ReviewsSwiper {
   reviews = REVIEWS;
 
   initSwiper(): void {
-    console.log(this.swiperID());
-
     this.swiper.set(new Swiper(`#${this.swiperID()}`, {
       slidesPerView: 1,
       spaceBetween: 27,

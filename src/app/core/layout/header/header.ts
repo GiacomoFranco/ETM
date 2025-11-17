@@ -15,7 +15,6 @@ export class Header {
       this.openedMenu()
         ? document?.body.classList.add('no-scroll')
         : document?.body.classList.remove('no-scroll');
-      console.log('gere');
     })
   }
 

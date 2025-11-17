@@ -1,0 +1,26 @@
+@use 'mixins' as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  max-width: 23rem;
+  flex: 1 1 0;
+  gap: .5rem;
+  container-type: inline-size;
+
+  @include custom-breakpoint(600) {
+    min-width: 16.3rem;
+  }
+}
+
+h2 {
+  font-weight: 900;
+  font-size: clamp(5rem, 24.9cqi, 6rem);
+  line-height: clamp(5.1rem, 24.9cqi , 6.1rem);
+}
+
+p {
+  color: #B4B5B5;
+  font-size: clamp(1.6rem, 9.6cqi, 2rem);
+  line-height: clamp(2.1rem, 9.6cqi ,2.5rem);
+}

@@ -20,8 +20,6 @@ export class GalerySwiper {
   // reviews = REVIEWS;
 
   initSwiper(): void {
-    console.log(this.swiperID());
-
     this.swiper.set(
       new Swiper(`#${this.swiperID()}`, {
         slidesPerView: 1,
