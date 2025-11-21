@@ -1,10 +1,10 @@
-@for(star of stars(); track $index) {
+@for (star of stars(); track $index) {
   <div>
-    <img src="/images/star.svg" alt="">
+    <img src="/images/star.svg" alt="" />
   </div>
 }
 @if (partialStar()) {
   <div [style]="'width: calc(15px * ' + partialStar() + ')'">
-    <img src="/images/star.svg" alt="">
+    <img src="/images/star.svg" alt="" />
   </div>
 }

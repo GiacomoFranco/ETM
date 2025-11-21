@@ -1,11 +1,11 @@
 import { Component, viewChild } from '@angular/core';
 
-import { ServicesSwiper } from "../services-swiper/services-swiper";
-import { Divider } from "../divider/divider";
+import { Divider } from '../divider/divider';
+import { ServicesSwiper } from '../services-swiper/services-swiper';
 
 @Component({
   selector: 'app-services-section',
-  imports: [ ServicesSwiper, Divider],
+  imports: [ServicesSwiper, Divider],
   templateUrl: './services-section.html',
   styleUrl: './services-section.scss',
 })

@@ -1,12 +1,12 @@
 <div class="header-container">
   <!-- <img routerLink="/" class="logo" src="/images/etm-logo-extended.svg" alt=""> -->
-  <img routerLink="/" class="logo" src="/images/etm-logo.svg" alt="">
+  <img routerLink="/" class="logo" src="/images/etm-logo.svg" alt="" />
   <nav class="desktop-nav">
     <a routerLink="/">Inicio</a>
     <a routerLink="/servicios">Servicios</a>
     <a routerLink="/nosotros">Nosotros</a>
     <a routerLink="/galeria">Galería</a>
-    <app-button text="Contacto"  icon="navigation" variant="WhiteOutline" link="/contact"/>
+    <app-button text="Contacto" icon="navigation" variant="WhiteOutline" link="/contact" />
   </nav>
 
   <div class="nav-panel" [class.nav-panel-opened]="openedMenu() ? 'nav-panel-opened' : ''">
@@ -18,34 +18,42 @@
             routerLinkActive="current-page"
             [routerLinkActiveOptions]="{exact: true}"
             (click)="toggleMenu()">
-            Inicio <app-icon name="navigation" colorName="MainWhite" />
+            Inicio
+            <app-icon name="navigation" colorName="MainWhite" />
           </a>
           <a
             routerLink="/servicios"
             routerLinkActive="current-page"
             [routerLinkActiveOptions]="{exact: true}"
             (click)="toggleMenu()">
-            Servicios <app-icon name="navigation" colorName="MainWhite" />
+            Servicios
+            <app-icon name="navigation" colorName="MainWhite" />
           </a>
           <a
             routerLink="/galeria"
             routerLinkActive="current-page"
             [routerLinkActiveOptions]="{exact: true}"
             (click)="toggleMenu()">
-            Galería <app-icon name="navigation" colorName="MainWhite" />
+            Galería
+            <app-icon name="navigation" colorName="MainWhite" />
           </a>
           <a
             routerLink="/contacto"
             routerLinkActive="current-page"
             [routerLinkActiveOptions]="{exact: true}"
             (click)="toggleMenu()">
-            Contacto <app-icon name="navigation" colorName="MainWhite" />
+            Contacto
+            <app-icon name="navigation" colorName="MainWhite" />
           </a>
         </nav>
         <div class="navigation-footer l-white-text">
           <div class="address">
             <p>(4) 444 91 78</p>
-            <address>Sabaneta - Antioquia, <br> Carrera 48 # 97 sur - 823</address>
+            <address>
+              Sabaneta - Antioquia,
+              <br />
+              Carrera 48 # 97 sur - 823
+            </address>
           </div>
           <div class="email">
             <a href="mailto:comercial@etmsas.com">comercial@etmsas.com</a>
@@ -59,5 +67,5 @@
     </div>
   </div>
 
-  <img class="burguer-menu" src="burguer-menu.svg" alt="" (click)="toggleMenu()">
+  <img class="burguer-menu" src="burguer-menu.svg" alt="" (click)="toggleMenu()" />
 </div>

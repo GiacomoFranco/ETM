@@ -5,72 +5,70 @@
   flex-wrap: wrap;
 }
 
-  h4 {
-    font-weight: 400;
-    font-size: 2.7rem;
-    flex: 0 0 content;
+h4 {
+  font-weight: 400;
+  font-size: 2.7rem;
+  flex: 0 0 content;
+
+  &.white {
+    color: var(--dark-gray);
+  }
+
+  &.black {
+    color: var(--main-gray);
+  }
+}
+
+app-button {
+  flex: 1 0 auto;
+  display: flex;
+}
+
+.loading-bar {
+  flex: 1000 1 0;
+  position: relative;
+  width: 100%;
+  height: 0.1rem;
+  border-radius: 0.1rem;
+
+  &__outer {
+    min-width: 27.5rem;
 
     &.white {
-      color: var(--dark-gray);
+      background-color: var(--darker-gray);
     }
 
     &.black {
-      color: var(--main-gray);
+      background-color: var(--main-gray);
     }
   }
+
+  &__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 0.1rem;
+
+    &.white {
+      background-color: var(--light-white);
+    }
+
+    &.black {
+      background-color: var(--main-black);
+    }
+  }
+}
+
+.swiper-controls {
+  display: flex;
+  gap: 3.5rem;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
 
   app-button {
-    flex: 1 0 auto;
     display: flex;
+    flex-grow: 1;
   }
-
-  .loading-bar {
-    flex: 1000 1 0;
-    position: relative;
-    width: 100%;
-    height: .1rem;
-    border-radius: .1rem;
-
-
-    &__outer {
-      min-width: 27.5rem;
-
-      &.white {
-        background-color: var(--darker-gray);
-      }
-
-      &.black {
-        background-color: var(--main-gray);
-      }
-    }
-
-    &__inner {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      border-radius: .1rem;
-
-      &.white {
-          background-color: var(--light-white);
-        }
-
-      &.black {
-        background-color: var(--main-black);
-      }
-    }
-  }
-
-
-  .swiper-controls {
-    display: flex;
-    gap: 3.5rem;
-    flex: 1 1 auto;
-    flex-wrap: wrap;
-
-    app-button {
-      display: flex;
-      flex-grow: 1;
-    }
-  }
+}

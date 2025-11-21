@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { CUSTOMERS } from '@app/core/constants/customers.constant';
 import { Customers } from '@app/core/models';
 
-
 @Component({
   selector: 'app-clients-carrousel',
   imports: [],

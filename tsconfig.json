@@ -9,7 +9,7 @@
       "@core/*": ["src/app/core/*"],
       "@assets/*": ["src/assets/*"],
       "@views": ["src/app/views/index.ts"],
-      "@shared": ["src/app/shared/index.ts"],
+      "@shared": ["src/app/shared/index.ts"]
     },
     "strict": true,
     "noImplicitOverride": true,

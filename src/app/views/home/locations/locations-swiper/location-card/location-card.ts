@@ -1,5 +1,6 @@
 import { Component, input } from '@angular/core';
-import { Icon } from "@app/shared/icon/icon";
+
+import { Icon } from '@app/shared/icon/icon';
 
 @Component({
   selector: 'app-location-card',

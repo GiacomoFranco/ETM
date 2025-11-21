@@ -1,5 +1,7 @@
 <header>
-  <app-header [style.top]="hideNav() ? '-12.6rem' : '0'" [style.background-color]=" navbarBackground() ? 'var(--main-black-opacity)' : 'transparent'"/>
+  <app-header
+    [style.top]="hideNav() ? '-12.6rem' : '0'"
+    [style.background-color]="navbarBackground() ? 'var(--main-black-opacity)' : 'transparent'" />
 </header>
 <main>
   <ng-content />

@@ -14,7 +14,6 @@
     display: flex;
     justify-content: center;
 
-
     &-container {
       max-width: var(--max-width);
       margin: var(--section-margin);
@@ -23,7 +22,7 @@
       flex-grow: 1;
       align-items: start;
       display: flex;
-      gap:9rem;
+      gap: 9rem;
 
       .logo-element {
         width: 11.9rem;
@@ -45,7 +44,6 @@
             flex: 1 0 27rem;
           }
 
-
           @include custom-breakpoint(672) {
             flex-basis: 25rem;
 
@@ -66,11 +64,10 @@
               margin-bottom: 1.3rem;
 
               a {
-                color: #4C4D4E;
+                color: #4c4d4e;
                 font-weight: 500;
                 text-decoration: none;
               }
-
             }
           }
 
@@ -80,20 +77,19 @@
             width: 11.884rem;
 
             img {
-              scale: .8;
+              scale: 0.8;
             }
           }
         }
       }
     }
-
   }
 
   .rights-element {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid #2F2F30;
+    border-top: 1px solid #2f2f30;
     width: 100%;
     min-height: 7.5rem;
     font-size: 1.5rem;
@@ -102,7 +98,7 @@
       font-size: inherit;
       font-weight: 400;
       color: var(--main-gray);
-      opacity: .5;
+      opacity: 0.5;
 
       span {
         color: var(--main-white);

@@ -1,6 +1,7 @@
-import { afterNextRender, Component, input, output } from '@angular/core';
+import { Component, afterNextRender, input, output } from '@angular/core';
 
 import { Button } from '../button/button';
+
 // import { gsap } from "gsap";
 
 @Component({

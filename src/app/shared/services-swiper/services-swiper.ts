@@ -1,9 +1,11 @@
-import { afterNextRender, Component, signal } from '@angular/core';
+import { Component, afterNextRender, signal } from '@angular/core';
 
-import { ServiceCard } from "../service-card/service-card";
 import { SERVICES } from '@app/core/constants';
-import { Autoplay } from 'swiper/modules';
+
 import Swiper from 'swiper';
+import { Autoplay } from 'swiper/modules';
+
+import { ServiceCard } from '../service-card/service-card';
 
 @Component({
   selector: 'app-services-swiper',
@@ -41,7 +43,7 @@ export class ServicesSwiper {
             spaceBetween: 33,
           },
         },
-      })
+      }),
     );
   }
 

@@ -1,4 +1,4 @@
-import { ButtonVariant } from "../models";
+import { ButtonVariant } from '../models';
 
 export const BUTTON_VARIANTS: Record<string, ButtonVariant> = {
   OrangeOutline: { class: 'orange-outline', iconColor: 'MainOrange' },

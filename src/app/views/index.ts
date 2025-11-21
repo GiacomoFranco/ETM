@@ -1,4 +1,4 @@
-export * from './home/home'
+export * from './home/home';
 export * from './services/services';
 export * from './about-us/about-us';
 export * from './galery/galery';

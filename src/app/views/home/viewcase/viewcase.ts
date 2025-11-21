@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-viewcase',
   imports: [],
   templateUrl: './viewcase.html',
-  styleUrl: './viewcase.scss'
+  styleUrl: './viewcase.scss',
 })
-export class Viewcase {
-
-}
+export class Viewcase {}

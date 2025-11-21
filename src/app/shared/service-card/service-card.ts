@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-service-card',
   imports: [],
   templateUrl: './service-card.html',
-  styleUrl: './service-card.scss'
+  styleUrl: './service-card.scss',
 })
-export class ServiceCard {
-
-}
+export class ServiceCard {}

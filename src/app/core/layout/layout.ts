@@ -1,6 +1,7 @@
 import { Component, HostListener, signal } from '@angular/core';
-import { Footer } from "./footer/footer";
-import { Header } from "./header/header";
+
+import { Footer } from './footer/footer';
+import { Header } from './header/header';
 
 @Component({
   selector: 'app-layout',

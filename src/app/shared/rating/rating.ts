@@ -4,7 +4,7 @@ import { Component, computed, input } from '@angular/core';
   selector: 'app-rating',
   imports: [],
   templateUrl: './rating.html',
-  styleUrl: './rating.scss'
+  styleUrl: './rating.scss',
 })
 export class Rating {
   rating = input<number>(0);

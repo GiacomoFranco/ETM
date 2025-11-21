@@ -6,8 +6,6 @@ import { Button } from '@shared';
   selector: 'app-banner',
   imports: [Button],
   templateUrl: './banner.html',
-  styleUrl: './banner.scss'
+  styleUrl: './banner.scss',
 })
-export class Banner {
-
-}
+export class Banner {}

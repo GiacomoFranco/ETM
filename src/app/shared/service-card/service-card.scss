@@ -10,11 +10,11 @@
   background-size: cover;
   container-type: inline-size;
 
-  &::after{
+  &::after {
     content: '';
     position: absolute;
     background-color: var(--main-black);
-    opacity: .6;
+    opacity: 0.6;
     top: 0;
     left: 0;
     width: 100%;
@@ -22,13 +22,11 @@
   }
 }
 
-
-
 .card-info {
   margin: 0 3.4rem;
   z-index: 1;
   display: flex;
-  border-top: .1rem solid var(--darker-gray);
+  border-top: 0.1rem solid var(--darker-gray);
   flex: 1 1 auto;
   align-items: center;
   padding: 2.1rem 0;

@@ -1,2 +1,1 @@
-export type IconName = 'navigation' | 'plus' | 'right-arrow' | 'left-arrow'
-
+export type IconName = 'navigation' | 'plus' | 'right-arrow' | 'left-arrow';

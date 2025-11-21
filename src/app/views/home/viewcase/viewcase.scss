@@ -6,7 +6,6 @@
   padding-bottom: clamp(1rem, 15.4cqi, 29.3rem);
 }
 
-
 section {
   gap: 7.6rem;
   flex-direction: column;
@@ -16,7 +15,6 @@ section {
     flex-grow: 1;
     justify-content: space-between;
     gap: 3.7rem 3rem;
-
 
     h2 {
       max-width: 91.1rem;
@@ -61,7 +59,6 @@ section {
         aspect-ratio: 872/500;
       }
     }
-
   }
 
   @include custom-breakpoint(500) {
@@ -70,6 +67,5 @@ section {
         aspect-ratio: 872/600;
       }
     }
-
   }
 }

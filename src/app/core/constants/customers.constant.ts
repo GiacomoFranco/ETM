@@ -1,4 +1,4 @@
-import { Customers } from "../models";
+import { Customers } from '../models';
 
 export const CUSTOMERS: Customers = [
   {

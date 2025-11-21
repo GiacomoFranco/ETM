@@ -1,4 +1,5 @@
-import { afterNextRender, Component, input, signal } from '@angular/core';
+import { Component, afterNextRender, input, signal } from '@angular/core';
+
 import Swiper from 'swiper';
 import { Autoplay } from 'swiper/modules';
 
@@ -45,7 +46,7 @@ export class GalerySwiper {
             spaceBetween: 27,
           },
         },
-      })
+      }),
     );
   }
 }

@@ -7,7 +7,9 @@
   z-index: 5;
   width: 100%;
   justify-content: center;
-  transition: top .3s ease, background-color .5s ease;
+  transition:
+    top 0.3s ease,
+    background-color 0.5s ease;
 }
 
 .header-container {
@@ -52,8 +54,10 @@
     top: 0;
     right: 0;
     visibility: hidden;
-    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
-    padding: clamp(10rem ,25cqi, 13.4rem) 0 0 0;
+    transition:
+      opacity 0.3s ease-in-out,
+      visibility 0.3s ease-in-out;
+    padding: clamp(10rem, 25cqi, 13.4rem) 0 0 0;
 
     &.nav-panel-opened {
       visibility: visible;
@@ -67,9 +71,9 @@
 
     ::-webkit-scrollbar-thumb {
       border: 2.5rem solid rgba(0, 0, 0, 0);
-        background-clip: padding-box;
-        border-radius: 9999px;
-        background-color: #333;
+      background-clip: padding-box;
+      border-radius: 9999px;
+      background-color: #333;
     }
 
     &-content {
@@ -102,13 +106,13 @@
             gap: 1rem;
 
             &.current-page {
-                text-decoration: underline;
-                color: var(--main-orange);
+              text-decoration: underline;
+              color: var(--main-orange);
 
-                app-icon {
-                  display: none;
-                }
+              app-icon {
+                display: none;
               }
+            }
           }
         }
 
@@ -120,7 +124,8 @@
           gap: 1.2rem;
           padding: 2.7rem 0;
 
-          p,address {
+          p,
+          address {
             color: var(--light-white);
             font-size: 1.3rem;
             text-transform: uppercase;
@@ -152,7 +157,6 @@
     }
   }
 
-
   @include custom-breakpoint(900) {
     .desktop-nav {
       display: none;
@@ -166,5 +170,4 @@
       display: block;
     }
   }
-
 }

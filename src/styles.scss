@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 * {
-  font-family: "DM Sans", sans-serif;
+  font-family: 'DM Sans', sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -14,14 +14,14 @@
   --section-margin: 0 var(--section-x-margin);
   --max-width: 1740px;
 
-  --main-gray: #BFBFBF;
+  --main-gray: #bfbfbf;
   --main-black: #121315;
-  --main-white: #EEEEEE;
-  --main-orange: #F86901;
-  --light-black: #1A1B1D;
-  --light-white: #FFFFFF;
+  --main-white: #eeeeee;
+  --main-orange: #f86901;
+  --light-black: #1a1b1d;
+  --light-white: #ffffff;
   --dark-gray: #848484;
-  --darker-gray: #59595B;
+  --darker-gray: #59595b;
   --main-black-opacity: rgba(18, 19, 21, 0.95);
 
   --fs-900: clamp(3.2rem, 3.9cqi, 6rem);
@@ -70,7 +70,6 @@ section {
   margin: var(--section-margin);
 }
 
-
 h1 {
   @include custom-text(var(--fs-900), var(--fs-900));
 }
@@ -84,7 +83,7 @@ h4 {
 }
 
 .as-h5 {
-  @include custom-text(18px,18px);
+  @include custom-text(18px, 18px);
 }
 
 p {
@@ -113,5 +112,3 @@ b {
 .gray-text {
   color: var(--dark-gray);
 }
-
-

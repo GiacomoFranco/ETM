@@ -1,6 +1,6 @@
 import { Component, computed, input } from '@angular/core';
 
-import { IconName, Colors } from '@app/core/models';
+import { Colors, IconName } from '@app/core/models';
 import { ColorsEnum } from '@core/enums';
 
 @Component({

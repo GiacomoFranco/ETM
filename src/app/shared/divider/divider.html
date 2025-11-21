@@ -1,6 +1,8 @@
 <h4 [class]="variant() === 'white' ? 'white' : 'black'">{{ title() }}</h4>
 @if (redirection()) {
-  <span class="loading-bar loading-bar__outer" [class]="variant() === 'white' ? 'white' : 'black'"></span>
+  <span
+    class="loading-bar loading-bar__outer"
+    [class]="variant() === 'white' ? 'white' : 'black'"></span>
   <app-button
     [text]="buttonText()"
     icon="navigation"
@@ -9,8 +11,9 @@
     (click)="emitNavigationEvent('next')" />
 } @else {
   <span class="loading-bar loading-bar__outer" [class]="variant() === 'white' ? 'white' : 'black'">
-    <span class="loading-bar loading-bar__inner" [class]="variant() === 'white' ? 'white' : 'black'">
-    </span>
+    <span
+      class="loading-bar loading-bar__inner"
+      [class]="variant() === 'white' ? 'white' : 'black'"></span>
   </span>
   <div class="swiper-controls">
     <app-button

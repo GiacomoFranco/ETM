@@ -1,12 +1,12 @@
-import { IconName } from "./icon.model"
-import { Colors } from "./colors.model"
+import { Colors } from './colors.model';
+import { IconName } from './icon.model';
 
 export type Button = {
-  icon: null | IconName,
-  text: null | string,
-  link: null | string,
-  variant: string
-}
+  icon: null | IconName;
+  text: null | string;
+  link: null | string;
+  variant: string;
+};
 
 export type ButtonVariantName =
   | 'OrangeOutline'
@@ -23,5 +23,5 @@ export type ButtonVariant = {
 };
 
 export type ButtonVariants = {
-  [key: string]: ButtonVariantName
-}
+  [key: string]: ButtonVariantName;
+};

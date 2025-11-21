@@ -1,6 +1,8 @@
 import { Component, viewChild } from '@angular/core';
-import { Divider } from "@app/shared";
-import { LocationsSwiper } from "./locations-swiper/locations-swiper";
+
+import { Divider } from '@app/shared';
+
+import { LocationsSwiper } from './locations-swiper/locations-swiper';
 
 @Component({
   selector: 'app-locations',

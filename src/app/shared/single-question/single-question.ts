@@ -1,5 +1,14 @@
-import { afterNextRender, Component, effect, ElementRef, input, signal, viewChild } from '@angular/core';
-import { Icon } from "../icon/icon";
+import {
+  Component,
+  ElementRef,
+  afterNextRender,
+  effect,
+  input,
+  signal,
+  viewChild,
+} from '@angular/core';
+
+import { Icon } from '../icon/icon';
 
 @Component({
   selector: 'app-single-question',
@@ -16,12 +25,11 @@ export class SingleQuestion {
     effect(() => {
       this.toggleStatus() ? this.isActive.set(true) : this.isActive.set(false);
     });
-
   }
 
   question = input<string>('¿Ofrecen servicio a domicilio o en carretera?');
   answer = input<string>(
-    'Ofrecemos un portafolio integral de servicios orientados al mantenimiento, reparación y fabricación de soluciones a la medida. Contamos con amplia experiencia en reparaciones de suspensión, chasis, carrocerías y furgones, así como en proyectos de transformación de acero y estructuras personalizadas.'
+    'Ofrecemos un portafolio integral de servicios orientados al mantenimiento, reparación y fabricación de soluciones a la medida. Contamos con amplia experiencia en reparaciones de suspensión, chasis, carrocerías y furgones, así como en proyectos de transformación de acero y estructuras personalizadas.',
   );
 
   whiteVariant = input<boolean>(false);

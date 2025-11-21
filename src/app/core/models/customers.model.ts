@@ -1,7 +1,7 @@
 export type Customer = {
-  alt: string,
-  logo: string,
-  adjustment?: string
-}
+  alt: string;
+  logo: string;
+  adjustment?: string;
+};
 
-export type Customers = Customer[]
+export type Customers = Customer[];

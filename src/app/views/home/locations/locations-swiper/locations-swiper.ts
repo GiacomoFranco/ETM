@@ -1,7 +1,9 @@
-import { afterNextRender, Component, signal } from '@angular/core';
+import { Component, afterNextRender, signal } from '@angular/core';
+
 import Swiper from 'swiper';
 import { Autoplay } from 'swiper/modules';
-import { LocationCard } from "./location-card/location-card";
+
+import { LocationCard } from './location-card/location-card';
 
 @Component({
   selector: 'app-locations-swiper',
@@ -49,7 +51,7 @@ export class LocationsSwiper {
             spaceBetween: 33,
           },
         },
-      })
+      }),
     );
   }
 

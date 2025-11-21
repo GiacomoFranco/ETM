@@ -8,7 +8,9 @@
     background-color: var(--light-black);
     padding: 2.8rem 3.4rem;
     border-radius: 1rem;
-    transition: color, background-color .3s ease-in-out;
+    transition:
+      color,
+      background-color 0.3s ease-in-out;
 
     &.white-variant {
       background-color: var(--light-white);
@@ -16,8 +18,8 @@
         background-color: var(--light-black);
         .question-title {
           h2 {
-              color: var(--dark-gray);
-            }
+            color: var(--dark-gray);
+          }
         }
 
         .question-answer {
@@ -44,7 +46,7 @@
 
       app-icon {
         user-select: none;
-        transition: all .3s ease-in-out;
+        transition: all 0.3s ease-in-out;
       }
     }
 
@@ -53,7 +55,7 @@
       overflow: hidden;
       color: var(--main-black);
       opacity: 0;
-      transition: all .3s ease-in-out;
+      transition: all 0.3s ease-in-out;
       margin-right: 30px;
 
       p {
@@ -76,11 +78,10 @@
         app-icon {
           transform: rotate(45deg);
         }
-
       }
 
       .question-answer {
-        opacity: .62;
+        opacity: 0.62;
       }
     }
   }

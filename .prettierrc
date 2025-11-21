@@ -7,7 +7,7 @@
   "trailingComma": "all",
   "arrowParens": "always",
   "bracketSpacing": true,
-  "bracketSameLine": false,
+  "bracketSameLine": true,
   "htmlWhitespaceSensitivity": "ignore",
   "embeddedLanguageFormatting": "auto",
   "endOfLine": "lf",
@@ -32,7 +32,15 @@
     ".*\\.(css|scss|sass|less)$"
   ],
   "importOrderSeparation": true,
+  "importOrderCaseSensitive": true,
   "importOrderSortSpecifiers": true,
-  "importOrderParserPlugins": ["typescript", "decorators-legacy"]
-
+  "importOrderParserPlugins": ["typescript", "decorators-legacy"],
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "parser": "angular"
+      }
+    }
+  ]
 }
