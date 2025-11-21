@@ -4,59 +4,58 @@
 
 a,
 button {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
   padding: 1.75rem 5.2rem;
   border: none;
   border-radius: 99.9rem;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2.5rem;
-  flex-grow: 1;
-  text-decoration: none;
-
   font-size: 1.5rem;
   font-weight: 400;
+  gap: 2.5rem;
+  text-decoration: none;
 }
 
 .white-outline {
-  background-color: transparent;
   border: 1px solid var(--light-white);
+  background-color: transparent;
   color: var(--light-white);
 }
 
 .gray-outline {
-  background-color: transparent;
   border: 1px solid var(--dark-gray);
+  background-color: transparent;
   color: var(--dark-gray);
 }
 
 .white {
-  background-color: var(--light-white);
   border: none;
+  background-color: var(--light-white);
   color: var(--main-black);
 }
 
 .black-outline {
-  background-color: transparent;
   border: 1px solid var(--main-black);
+  background-color: transparent;
   color: var(--main-black);
 }
 
 .orange-outline {
-  background-color: transparent;
   border: 1px solid var(--main-orange);
+  background-color: transparent;
   color: var(--main-orange);
 }
 
 .white-orange {
-  background-color: var(--light-white);
   border: none;
+  background-color: var(--light-white);
   color: var(--main-orange);
 }
 
 .black {
-  background-color: var(--main-black);
   border: none;
+  background-color: var(--main-black);
   color: var(--light-white);
 }

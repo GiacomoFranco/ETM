@@ -2,8 +2,8 @@
 
 @mixin swiper($height) {
   .swiper {
-    height: #{$height} !important;
     width: 100%;
+    height: #{$height} !important;
 
     .swiper-slide {
       height: 100%;

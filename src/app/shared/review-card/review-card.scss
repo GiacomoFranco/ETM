@@ -1,12 +1,12 @@
 :host {
   display: flex;
-  flex-direction: column;
-  gap: 2.7rem;
-  background-color: #f9f9f9;
   height: 100%;
-  padding: 3.8rem 3.2rem 2.3rem 3.2rem;
-  container-type: inline-size;
+  flex-direction: column;
+  padding: 3.8rem 3.2rem 2.3rem;
+  background-color: #f9f9f9;
   container-name: review-card;
+  container-type: inline-size;
+  gap: 2.7rem;
 }
 
 .review-header {
@@ -19,30 +19,30 @@
     gap: 0.3rem;
 
     h5 {
+      color: var(--main-black);
       font-size: 1.9rem;
       font-weight: 300;
-      color: var(--main-black);
     }
 
     p {
-      font-size: 1.7rem;
-      line-height: 1.7rem;
-      font-weight: 300;
       color: var(--darker-gray);
+      font-size: 1.7rem;
+      font-weight: 300;
+      line-height: 1.7rem;
     }
   }
 }
 
 .review-content {
   p {
-    font-size: clamp(1.8rem, 4cqi, 2rem);
-    color: #707070;
-    overflow: hidden;
-    text-overflow: ellipsis;
     display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    color: #707070;
+    font-size: clamp(1.8rem, 4cqi, 2rem);
     -webkit-line-clamp: 6;
     line-clamp: 6;
-    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
   }
 }
 

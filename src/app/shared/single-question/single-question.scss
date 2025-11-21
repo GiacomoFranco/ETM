@@ -1,21 +1,23 @@
 :host {
   display: flex;
-  justify-content: center;
   width: 100%;
+  justify-content: center;
 
   .single-question {
-    cursor: pointer;
-    background-color: var(--light-black);
     padding: 2.8rem 3.4rem;
     border-radius: 1rem;
+    background-color: var(--light-black);
+    cursor: pointer;
     transition:
       color,
       background-color 0.3s ease-in-out;
 
     &.white-variant {
       background-color: var(--light-white);
+
       &.active {
         background-color: var(--light-black);
+
         .question-title {
           h2 {
             color: var(--dark-gray);
@@ -32,37 +34,37 @@
 
     .question-title {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 3rem;
 
       h2 {
         color: var(--dark-gray);
-        user-select: none;
         font-size: clamp(2rem, 2.6cqi, 2.5rem);
-        line-height: clamp(2.1rem, 2.6cqi, 2.6rem);
         font-weight: 400;
+        line-height: clamp(2.1rem, 2.6cqi, 2.6rem);
+        user-select: none;
       }
 
       app-icon {
-        user-select: none;
         transition: all 0.3s ease-in-out;
+        user-select: none;
       }
     }
 
     .question-answer {
-      max-height: 0;
       overflow: hidden;
+      max-height: 0;
+      margin-right: 30px;
       color: var(--main-black);
       opacity: 0;
       transition: all 0.3s ease-in-out;
-      margin-right: 30px;
 
       p {
         margin-top: 2.2rem;
         cursor: text;
-        font-weight: 400;
         font-size: clamp(1.8rem, 2.6cqi, 2rem);
+        font-weight: 400;
         line-height: clamp(2rem, 2.6cqi, 2.1rem);
       }
     }

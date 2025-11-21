@@ -2,14 +2,13 @@
 
 :host {
   display: flex;
-  min-height: 100vh;
   width: 100vw;
+  min-height: 100vh;
   justify-content: center;
-
   background-image: url('/images/banner.webp');
+  background-position: bottom center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom center;
 }
 
 section {
@@ -18,24 +17,23 @@ section {
 
   .banner-content {
     display: flex;
-    flex-direction: column;
-    gap: 3.7rem;
     max-width: 70.5rem;
-    padding: 0 0 6.519% 0;
+    flex-direction: column;
+    padding: 0 0 6.519%;
+    gap: 3.7rem;
 
     p {
       margin-bottom: 3.3rem;
 
       @include custom-breakpoint(600) {
-        margin-bottom: 0rem;
+        margin-bottom: 0;
       }
     }
 
     .call-to-action {
       display: flex;
-      gap: 2rem 3.9rem;
-
       flex-wrap: wrap;
+      gap: 2rem 3.9rem;
 
       @include custom-breakpoint(450) {
         app-button {

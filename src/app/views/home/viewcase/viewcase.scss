@@ -7,8 +7,8 @@
 }
 
 section {
-  gap: 7.6rem;
   flex-direction: column;
+  gap: 7.6rem;
 
   .viewcase-title {
     display: flex;
@@ -32,9 +32,9 @@ section {
     height: 0;
 
     .viewcase-video {
-      background-color: var(--light-black);
       width: 100%;
       aspect-ratio: 872/373;
+      background-color: var(--light-black);
     }
   }
 

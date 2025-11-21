@@ -1,0 +1,4 @@
+*.css
+*.scss
+src/**/*.scss
+src/**/*.css

@@ -1,23 +1,23 @@
 @use 'mixins' as *;
 
 :host {
+  position: relative;
   display: flex;
+  min-height: clamp(1rem, 27cqi, 50.8rem);
   justify-content: center;
   background-color: var(--main-orange);
-  min-height: clamp(1rem, 27cqi, 50.8rem);
-  position: relative;
 
   &::before {
-    content: '';
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-image: url('/images/pattern.webp');
     background-position: 94% 32%;
+    content: '';
     opacity: 0.3;
-    z-index: 1;
   }
 }
 
@@ -26,17 +26,17 @@ section {
   align-items: center;
 
   .call-to-action {
-    max-width: 82.9rem;
     display: flex;
+    max-width: 82.9rem;
     flex-direction: column;
-    gap: 4rem;
     margin: 5rem 0;
+    gap: 4rem;
   }
 
   .image-container {
     position: relative;
-    height: 100%;
     width: 100%;
+    height: 100%;
 
     img {
       position: absolute;
@@ -48,8 +48,8 @@ section {
 
   @include custom-breakpoint(800) {
     .call-to-action {
-      margin: 8rem 0;
       max-width: initial;
+      margin: 8rem 0;
 
       h2 {
         text-align: center;

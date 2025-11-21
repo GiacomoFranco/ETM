@@ -1,22 +1,22 @@
 @use 'mixins' as *;
 
 :host {
-  display: flex;
-  padding: 3.4rem 0 3.4rem 0;
   position: fixed;
   z-index: 5;
+  display: flex;
   width: 100%;
   justify-content: center;
+  padding: 3.4rem 0;
   transition:
     top 0.3s ease,
     background-color 0.5s ease;
 }
 
 .header-container {
-  flex-grow: 1;
   display: flex;
-  justify-content: space-between;
   max-width: var(--max-width);
+  flex-grow: 1;
+  justify-content: space-between;
   margin: var(--section-margin);
 
   img {
@@ -33,35 +33,35 @@
   }
 
   .burguer-menu {
-    display: none;
     z-index: 6;
+    display: none;
     width: 2.9rem;
   }
 
   .desktop-nav {
     display: flex;
-    gap: 3.4cqi;
     align-items: center;
+    gap: 3.4cqi;
   }
 
   .nav-panel {
-    display: none;
     position: fixed;
-    width: 100vw;
-    height: 100vh;
-    opacity: 0;
-    background-color: var(--main-black);
     top: 0;
     right: 0;
-    visibility: hidden;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    padding: clamp(10rem, 25cqi, 13.4rem) 0 0;
+    background-color: var(--main-black);
+    opacity: 0;
     transition:
       opacity 0.3s ease-in-out,
       visibility 0.3s ease-in-out;
-    padding: clamp(10rem, 25cqi, 13.4rem) 0 0 0;
+    visibility: hidden;
 
     &.nav-panel-opened {
-      visibility: visible;
       opacity: 1;
+      visibility: visible;
     }
 
     ::-webkit-scrollbar {
@@ -70,25 +70,25 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      border: 2.5rem solid rgba(0, 0, 0, 0);
-      background-clip: padding-box;
+      border: 2.5rem solid rgb(0 0 0 / 0%);
       border-radius: 9999px;
+      background-clip: padding-box;
       background-color: #333;
     }
 
     &-content {
-      height: 100%;
-      max-width: var(--max-width);
-      margin: var(--section-margin);
       display: flex;
+      max-width: var(--max-width);
+      height: 100%;
       flex-direction: column;
       justify-content: space-between;
+      margin: var(--section-margin);
       overflow-y: auto;
 
       .navigation {
-        flex-grow: 1;
         display: flex;
         flex-direction: column;
+        flex-grow: 1;
         justify-content: space-between;
 
         nav {
@@ -96,18 +96,18 @@
           flex-direction: column;
 
           a {
-            font-size: 2.9rem;
-            color: var(--dark-gray);
             display: flex;
-            justify-content: space-between;
             width: 100%;
+            justify-content: space-between;
             padding: 2.7rem 0;
             border-bottom: 1px solid #242424;
+            color: var(--dark-gray);
+            font-size: 2.9rem;
             gap: 1rem;
 
             &.current-page {
-              text-decoration: underline;
               color: var(--main-orange);
+              text-decoration: underline;
 
               app-icon {
                 display: none;
@@ -118,26 +118,26 @@
 
         .navigation-footer {
           display: flex;
-          justify-content: space-between;
-          align-items: flex-end;
           flex-wrap: wrap;
-          gap: 1.2rem;
+          align-items: flex-end;
+          justify-content: space-between;
           padding: 2.7rem 0;
+          gap: 1.2rem;
 
           p,
           address {
             color: var(--light-white);
             font-size: 1.3rem;
-            text-transform: uppercase;
-            font-weight: 300;
             font-style: normal;
+            font-weight: 300;
             line-height: 1.5rem;
+            text-transform: uppercase;
           }
 
           a {
             color: var(--dark-gray);
-            text-decoration: underline;
             font-size: 1.3rem;
+            text-decoration: underline;
           }
         }
       }
@@ -145,13 +145,13 @@
       .rights {
         display: flex;
         justify-content: space-between;
-        font-size: 1.3rem;
         padding: 1rem 0;
         border-top: 1px solid #242424;
+        font-size: 1.3rem;
 
         p {
-          font-size: inherit;
           color: var(--dark-gray);
+          font-size: inherit;
         }
       }
     }

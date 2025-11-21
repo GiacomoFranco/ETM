@@ -1,0 +1,6 @@
+*.html
+*.ts
+*.js
+src/**/*.html
+src/**/*.ts
+src/**/*.js

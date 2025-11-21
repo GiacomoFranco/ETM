@@ -1,11 +1,11 @@
 :host {
   display: flex;
-  flex-direction: column;
   min-height: 100vh;
+  flex-direction: column;
   overflow-x: hidden;
 }
 
 main {
-  flex-grow: 1;
   min-height: calc(100vh);
+  flex-grow: 1;
 }

@@ -1,7 +1,7 @@
 :host {
   display: flex;
   justify-content: center;
-  padding: 13.8rem 0 13.8rem 0;
+  padding: 13.8rem 0;
 }
 
 section {
@@ -15,10 +15,10 @@ section {
   .swipers-container {
     position: relative;
     left: 50%;
-    width: 100vw;
-    margin-left: calc(50vw * -1);
     display: flex;
+    width: 100vw;
     flex-direction: column;
+    margin-left: calc(50vw * -1);
     gap: 3.3rem;
   }
 }

@@ -1,41 +1,39 @@
 @use 'mixins' as *;
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap';
 
 * {
-  font-family: 'DM Sans', sans-serif;
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
+  margin: 0;
   color: var(--light-black);
+  font-family: 'DM Sans', sans-serif;
 }
 
 :root {
   --section-x-margin: clamp(7rem, 7.7vw, 9.6rem);
   --section-margin: 0 var(--section-x-margin);
   --max-width: 1740px;
-
   --main-gray: #bfbfbf;
   --main-black: #121315;
-  --main-white: #eeeeee;
+  --main-white: #eee;
   --main-orange: #f86901;
   --light-black: #1a1b1d;
-  --light-white: #ffffff;
+  --light-white: #fff;
   --dark-gray: #848484;
   --darker-gray: #59595b;
-  --main-black-opacity: rgba(18, 19, 21, 0.95);
-
+  --main-black-opacity: rgb(18 19 21 / 95%);
   --fs-900: clamp(3.2rem, 3.9cqi, 6rem);
   --fs-800: clamp(3.2rem, 3cqi, 6rem);
   --fs-700: clamp(2.2rem, 1.7cqi, 3.2rem);
 }
 
-@media (max-width: 1600px) {
+@media (width <= 1600px) {
   :root {
     --section-x-margin: 3.8rem;
   }
 }
 
-@media (max-width: 440px) {
+@media (width <= 440px) {
   :root {
     --section-x-margin: 1.8rem;
   }
@@ -46,13 +44,13 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
-  letter-spacing: 0.01em;
-  overflow-x: hidden;
   width: 100vw;
   min-height: 100vh;
   background-color: var(--main-white);
   color: var(--main-black);
+  font-size: 1.6rem;
+  letter-spacing: 0.01em;
+  overflow-x: hidden;
 
   &.no-scroll {
     overflow: hidden;
@@ -65,17 +63,13 @@ body {
 
 section {
   display: flex;
-  flex-grow: 1;
   max-width: var(--max-width);
+  flex-grow: 1;
   margin: var(--section-margin);
 }
 
-h1 {
+h1, h2 {
   @include custom-text(var(--fs-900), var(--fs-900));
-}
-
-h2 {
-  @extend h1;
 }
 
 h4 {
@@ -87,14 +81,14 @@ h4 {
 }
 
 p {
-  font-weight: 200;
   font-size: 2rem;
+  font-weight: 200;
   line-height: 2.84rem;
 }
 
 b {
-  font-weight: 700;
   color: inherit;
+  font-weight: 700;
 }
 
 .l-white-text {

@@ -1,27 +1,27 @@
 @use 'mixins' as *;
 
 :host {
-  margin-top: auto;
-  background-color: var(--main-black);
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  margin-top: auto;
+  background-color: var(--main-black);
 
   .navigator-element {
-    padding: 12.9rem 0 11.2rem 0;
-    width: 100%;
     display: flex;
+    width: 100%;
     justify-content: center;
+    padding: 12.9rem 0 11.2rem;
 
     &-container {
-      max-width: var(--max-width);
-      margin: var(--section-margin);
-      flex-wrap: wrap;
-      justify-content: space-between;
-      flex-grow: 1;
-      align-items: start;
       display: flex;
+      max-width: var(--max-width);
+      flex-grow: 1;
+      flex-wrap: wrap;
+      align-items: start;
+      justify-content: space-between;
+      margin: var(--section-margin);
       gap: 9rem;
 
       .logo-element {
@@ -30,15 +30,15 @@
 
       .menu-element {
         display: flex;
-        justify-content: space-between;
         max-width: 124.2rem;
-        gap: 3rem;
         flex-grow: 1;
         flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 3rem;
 
         .links-group {
-          font-size: 1.8rem;
           flex-shrink: 0;
+          font-size: 1.8rem;
 
           @include custom-breakpoint(890) {
             flex: 1 0 27rem;
@@ -53,15 +53,15 @@
           }
 
           h2 {
+            margin-bottom: 2.2rem;
             color: var(--main-gray);
             font-weight: 700;
-            margin-bottom: 2.2rem;
           }
 
           .links-element {
             li {
-              list-style: none;
               margin-bottom: 1.3rem;
+              list-style: none;
 
               a {
                 color: #4c4d4e;
@@ -73,8 +73,8 @@
 
           .social-media {
             display: flex;
-            justify-content: space-between;
             width: 11.884rem;
+            justify-content: space-between;
 
             img {
               scale: 0.8;
@@ -87,17 +87,17 @@
 
   .rights-element {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid #2f2f30;
     width: 100%;
     min-height: 7.5rem;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #2f2f30;
     font-size: 1.5rem;
 
     p {
+      color: var(--main-gray);
       font-size: inherit;
       font-weight: 400;
-      color: var(--main-gray);
       opacity: 0.5;
 
       span {

@@ -1,8 +1,8 @@
 :host {
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 10.1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel {
@@ -16,13 +16,13 @@
   }
 
   .group {
-    display: flex;
     position: relative;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 13.2rem;
     padding-right: 13.2rem;
     animation: spin 30s infinite linear;
+    gap: 13.2rem;
 
     .slide {
       flex: 0 0 auto;
@@ -35,6 +35,7 @@
   from {
     translate: 0;
   }
+
   to {
     translate: -100%;
   }
