@@ -2,6 +2,7 @@
   "extends": ["stylelint-config-standard-scss", "stylelint-config-idiomatic-order"],
   "plugins": ["stylelint-scss"],
   "rules": {
-    "no-empty-source": false
+    "no-empty-source": null,
+    "no-descending-specificity": null
   }
 }
