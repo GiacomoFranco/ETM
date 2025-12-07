@@ -3,7 +3,7 @@
 :host {
   display: flex;
   width: 100vw;
-  min-height: 100vh;
+  min-height: min(100vh, 108rem);
   justify-content: center;
   background-image: url('/images/banner.webp');
   background-position: bottom center;

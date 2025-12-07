@@ -1,0 +1,154 @@
+@use 'mixins' as *;
+
+:host {
+  display: flex;
+  justify-content: center;
+  padding: 12.7rem 0 5.9rem;
+  background-color: #E8E8E8;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+
+    .contact-info{
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      max-width: 71.3rem;
+      gap: 5rem;
+      justify-content: space-between;
+      
+      .info-title {
+        h2 {
+          margin-bottom: 7.3rem;
+        }
+      }
+  
+      .info-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.5rem;
+
+  
+        .mail {
+          a {
+            font-size: 2rem;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+    
+
+    .contact-form{
+      flex: 1 1 auto;
+      max-width: 90rem;
+      background-color: #E5E6E8;
+      border-radius: 1rem;
+      padding: 5.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4.8rem;
+  
+      .form-title {
+        h2 {
+          font-size: 3rem;
+          font-weight: 400;
+        }
+  
+        P {
+          line-height: 2.1rem;
+        }
+      }
+  
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+  
+        .form-field {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          min-width: 23rem;
+  
+          .input-container {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+    
+            input, textarea {
+              outline: none;
+              min-height: 5.6rem;
+              background-color: transparent;
+              border: none;
+              border-bottom: .15rem solid #696A6C;
+              resize: none;
+              font-size: 1.8rem;
+              color: var(--main-black);
+              
+              &:focus ~ label,
+              &:valid ~ label {
+                opacity: 1;
+                top: -.6rem;
+                color: #696A6C;
+                scale: .8;
+                transition: all .3s ease;
+              }
+            }
+  
+            textarea {
+              min-height: 13rem;
+              padding-top: 2rem;
+            }
+    
+            label {
+              transform-origin: top left;
+              position: absolute;
+              pointer-events: none;
+              transition: all .3s ease;
+              top: 1.5rem;
+              color: #bcbcc2;
+            }
+          }
+        }
+  
+        app-button {
+          margin-top: 2.3rem;  
+        }
+      }
+    }
+}
+
+@include custom-breakpoint(1200) {
+  section {
+      flex-direction: column;
+      
+      .contact-info {
+        .info-title {
+          h2 {
+            margin-bottom: 0rem;
+          }
+         }
+          
+          img {
+            display: none;
+          }
+      }
+
+      .contact-form {
+        max-width: initial;
+      }
+    }
+}
+
+@include custom-breakpoint(650) {
+  section {
+    .contact-form {
+      padding: 3rem;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+<section>
+    <div class="contact-info">
+      <div class="info-title">
+        <h2>Estamos listos para responder todas sus dudas y necesidades</h2>
+        <img src="/images/tab-icon.svg" alt="" />
+      </div>
+      <div class="info-content">
+        <div class="phone">
+          <p>Telefono</p>
+          <p><b>(4) 444 91 78</b></p>
+        </div>
+        <div class="mail">
+          <p>Correo Electrónico</p>
+          <a href="mailto:comercial@etmsas.com">comercial@etmsas.com</a>
+        </div>
+        <p>Lunes - Viernes 7:00 am - 7:00 pm</p>
+        <div class="locations">
+          <p><b>Sede Medellín:</b> Carrera 49 No. 52 Sur-200</p>
+          <p><b>Sede Cartagena:</b> Centro Empresarial, Etapa 1, Bodega 3ª. Tel. (5) 671 03 98</p>
+          <p><b>Sede Rio Claro:</b> Autopista Medellín-Bogotá, Km.92. Tel. 312 876 77 49</p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-title">
+        <h2>Ponte en contacto con nuestro equipo</h2>
+        <p>Complete el formulario y nuestro equipo se comunicará con usted para ofrecerle <b>asesoría personalizada y soluciones adaptadas a sus necesidades técnicas.</b></p>
+      </div>
+      <form action="">
+        
+        <div class="form-field">
+          <div class="input-container">
+            <input type="text" id="name" autocomplete="on" required/>
+            <label for="name">Nombre completo</label>
+          </div>
+        </div>
+  
+        <div class="form-field">
+          <div class="input-container">
+            <input type="text" id="email" autocomplete="on" required/>
+            <label for="email">Correo electrónico</label>
+          </div>
+        </div>
+  
+        <div class="form-field">
+          <div class="input-container">
+            <input type="text" id="subject" autocomplete="on" required/>
+            <label for="subject">Asunto</label>
+          </div>
+        </div>
+  
+        <div class="form-field">
+         <div class="input-container">
+        <textarea name="" id="" cols="30" rows="1" id="contact-message"  required ></textarea>
+        <label for="contact-message">Mensaje</label>
+      </div>
+        </div>
+        <app-button text="Enviar" variant="BlackOutline" icon="navigation" (click)="sendMockedData()"/>
+      </form>
+    </div>
+</section>
