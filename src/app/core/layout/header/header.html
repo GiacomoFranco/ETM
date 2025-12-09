@@ -4,7 +4,7 @@
   <nav class="desktop-nav">
     <a routerLink="/">Inicio</a>
     <a routerLink="/servicios">Servicios</a>
-    <a routerLink="/nosotros">Nosotros</a>
+    <a routerLink="/sobre-nosotros">Nosotros</a>
     <a routerLink="/galeria">Galería</a>
     <app-button text="Contacto" icon="navigation" variant="WhiteOutline" link="/contacto" />
   </nav>
@@ -27,6 +27,14 @@
             [routerLinkActiveOptions]="{exact: true}"
             (click)="toggleMenu()">
             Servicios
+            <app-icon name="navigation" colorName="MainWhite" />
+          </a>
+          <a
+            routerLink="/sobre-nosotros"
+            routerLinkActive="current-page"
+            [routerLinkActiveOptions]="{exact: true}"
+            (click)="toggleMenu()">
+            Sobre Nosotros
             <app-icon name="navigation" colorName="MainWhite" />
           </a>
           <a

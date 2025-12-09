@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { GeneralBanner } from "@app/shared/general-banner/general-banner";
 
 @Component({
   selector: 'app-about-us',
-  imports: [],
+  imports: [GeneralBanner],
   templateUrl: './about-us.html',
   styleUrl: './about-us.scss',
 })
