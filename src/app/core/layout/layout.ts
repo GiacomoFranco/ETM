@@ -2,10 +2,11 @@ import { Component, HostListener, signal } from '@angular/core';
 
 import { Footer } from './footer/footer';
 import { Header } from './header/header';
+import { WhatsappRedirection } from "@app/shared/whatsapp-redirection/whatsapp-redirection";
 
 @Component({
   selector: 'app-layout',
-  imports: [Footer, Header],
+  imports: [Footer, Header, WhatsappRedirection],
   templateUrl: './layout.html',
   styleUrl: './layout.scss',
 })
