@@ -9,4 +9,5 @@ import { Component, input } from '@angular/core';
 export class Metric {
   metric = input<string>('');
   metricText = input<string>('');
+  variant = input<string>('default');
 }

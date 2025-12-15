@@ -2,29 +2,29 @@
   <div class="value">
     <div class="value-highlights">
       <app-single-question
-        [whiteVariant]="true"
+        [whiteVariant]="variant() === 'default' ? true : false"
         question="Especialistas en vehículos eléctricos y de carga"
         answer="Contamos con un taller multimarca especializado en mantenimiento y reparación de vehículos eléctricos e industriales. Ofrecemos soluciones técnicas certificadas, con personal capacitado y herramientas de última generación para garantizar rendimiento, seguridad y eficiencia." />
       <app-single-question
-        [whiteVariant]="true"
+        [whiteVariant]="variant() === 'default' ? true : false"
         [toggleStatus]="true"
         question="Aliados estratégicos que respaldan nuestra calidad"
         answer="Somos taller autorizado de marcas líderes como <b>FANALCA, ROMARCO, AUTECO</b> y <b>HEIL TRAILER</b>, lo que nos permite garantizar procesos certificados, repuestos originales y la confianza de trabajar bajo estándares reconocidos a nivel nacional. " />
       <app-single-question
-        [whiteVariant]="true"
+        [whiteVariant]="variant() === 'default' ? true : false"
         question="Resultados que respaldan nuestra trayectoria"
         answer="Durante el 2025 hemos superado las 12.000 intervenciones técnicas exitosas, reafirmando nuestro compromiso con la eficiencia y la confianza. Cada servicio realizado demuestra la capacidad, el conocimiento y la constancia de nuestro equipo técnico." />
       <app-single-question
-        [whiteVariant]="true"
+        [whiteVariant]="variant() === 'default' ? true : false"
         question="Cobertura nacional con atención rápida y oportuna"
         answer="Nuestra presencia se extiende a nivel nacional, garantizando atención ágil y personalizada donde nuestros clientes lo requieran. Contamos con una red técnica y logística que nos permite ofrecer soporte en diferentes regiones del país." />
     </div>
     <div class="value-info">
       <div class="value-text">
-        <h2 class="black-text">
+        <h2 [class]="variant() === 'default' ? 'black-text' : 'white-text'">
           La experiencia adquirida nos convierte en un aliado estratégico confiable
         </h2>
-        <p>
+        <p [class]="variant() === 'default' ? 'black-text' : 'gray-text'">
           Trabajamos con compromiso y experiencia para ofrecer mantenimiento, reparación y
           fabricación a la medida. Nuestra prioridad es asegurar la eficiencia, prolongar la vida
           útil de su maquinaria y brindarle soluciones confiables respaldadas por materiales de la
@@ -32,11 +32,13 @@
         </p>
       </div>
       <div class="value-metrics">
-        <app-metric metric="100" metricText="Clientes  y alianzas estratégicas" />
-        <app-metric metric="15" metricText="Años en la industria automotriz" />
-        <app-metric metric="12k" metricText="Intervenciones técnicas completadas en 2025" />
+        <app-metric metric="100" metricText="Clientes  y alianzas estratégicas" [variant]="variant()"/>
+        <app-metric metric="15" metricText="Años en la industria automotriz" [variant]="variant()"/>
+        <app-metric metric="12k" metricText="Intervenciones técnicas completadas en 2025" [variant]="variant()"/>
       </div>
     </div>
   </div>
 </section>
-<app-clients-carrousel />
+@if (variant() === 'default') {
+  <app-clients-carrousel />
+}

@@ -17,10 +17,17 @@ h2 {
   font-size: clamp(5rem, 24.9cqi, 6rem);
   font-weight: 900;
   line-height: clamp(5.1rem, 24.9cqi, 6.1rem);
+
+  &.dark-variant {
+    color: var(--light-white);
+  }
 }
 
 p {
   color: #b4b5b5;
   font-size: clamp(1.6rem, 9.6cqi, 2rem);
   line-height: clamp(2.1rem, 9.6cqi, 2.5rem);
+    &.dark-variant {
+    color: var(--dark-gray);
+  }
 }

@@ -6,7 +6,6 @@
   min-height: 90rem;
   align-items: flex-start;
   justify-content: center;
-  padding: 21rem 0 33.8rem;
   margin-bottom: 30rem;
   background-color: var(--main-black);
 
@@ -41,6 +40,11 @@ section {
     h2 {
       max-width: 84.2rem;
       flex: 1 0 0;
+
+      &.title-variant {
+      max-width: 104.7rem;
+        
+      }
     }
 
     p {

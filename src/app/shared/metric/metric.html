@@ -1,2 +1,2 @@
-<h2>+{{ metric() }}</h2>
-<p>{{ metricText() }}</p>
+<h2 [class]="variant() === 'default' ? null : 'dark-variant'">+{{ metric() }}</h2>
+<p [class]="variant() === 'default' ? null : 'dark-variant'">{{ metricText() }}</p>

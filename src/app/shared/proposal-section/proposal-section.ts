@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { ClientsCarrousel } from '../clients-carrousel/clients-carrousel';
 import { Metric } from '../metric/metric';
@@ -10,4 +10,6 @@ import { SingleQuestion } from '../single-question/single-question';
   templateUrl: './proposal-section.html',
   styleUrl: './proposal-section.scss',
 })
-export class ProposalSection {}
+export class ProposalSection {
+  variant = input<string>('default');
+}

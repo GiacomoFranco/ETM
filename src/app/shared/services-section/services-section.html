@@ -1,20 +1,30 @@
 <section>
-  <div class="services-heading">
-    <h2 class="l-white-text">
-      Descubra nuestras soluciones integrales en mantenimiento, reparación y fabricación.
-    </h2>
-    <p class="gray-text">
-      Ofrecemos un
-      <b>portafolio integral de servicios</b>
-      orientados al mantenimiento, reparación y fabricación de soluciones a la medida.
-      <b>Contamos con amplia experiencia</b>
-      en reparaciones de suspensión, chasis, carrocerías y furgones, así como en proyectos de
-      transformación de acero y estructuras personalizadas.
-      <b>Nuestro objetivo es garantizar la durabilidad, eficiencia y seguridad de su maquinaria</b>
-      mediante procesos innovadores, materiales de alta calidad y un equipo altamente capacitado,
-      brindando así confianza y respaldo en cada proyecto.
-    </p>
-  </div>
-  <app-divider title="Nuestros Servicios" (navigationEmitter)="navigate($event)" />
-  <app-services-swiper />
+  @if (variant() === 'default') {
+    <div class="services-heading">
+      <h2 class="l-white-text">
+        Descubra nuestras soluciones integrales en mantenimiento, reparación y fabricación.
+      </h2>
+      <p class="gray-text">
+        Ofrecemos un
+        <b>portafolio integral de servicios</b>
+        orientados al mantenimiento, reparación y fabricación de soluciones a la medida.
+        <b>Contamos con amplia experiencia</b>
+        en reparaciones de suspensión, chasis, carrocerías y furgones, así como en proyectos de
+        transformación de acero y estructuras personalizadas.
+        <b>Nuestro objetivo es garantizar la durabilidad, eficiencia y seguridad de su maquinaria</b>
+        mediante procesos innovadores, materiales de alta calidad y un equipo altamente capacitado,
+        brindando así confianza y respaldo en cada proyecto.
+      </p>
+    </div>
+    <app-divider title="Nuestros Servicios" (navigationEmitter)="navigate($event)" />
+    <app-services-swiper />
+  } @else {
+     <div class="services-heading">
+      <h2 class="l-white-text title-variant">
+        Servicios confiables y personalizados para el sector industrial y vehicular
+      </h2>
+    </div>
+    <app-divider title="Nuestros Servicios" (navigationEmitter)="navigate($event)" />
+    <app-services-swiper-variant />
+  }
 </section>
