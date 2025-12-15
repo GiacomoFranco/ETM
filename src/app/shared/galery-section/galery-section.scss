@@ -17,6 +17,11 @@ section {
     text-align: center;
     text-wrap: balance;
 
+    &.variant {
+      align-self: flex-start;
+      text-align: left;
+    }
+
     @include custom-breakpoint(700) {
       text-align: left;
     }
