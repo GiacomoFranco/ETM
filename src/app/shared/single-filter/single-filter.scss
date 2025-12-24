@@ -1,0 +1,20 @@
+span {
+  padding: .5rem 2rem;
+  background-color: #1A1C1B;
+  color: var(--main-white);
+  border-radius: 10rem;
+  font-size: 1.5rem;
+  line-height: 2.6rem;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  
+  &.active {
+    background-color: var(--main-white);
+    color: var(--main-black);
+  }
+
+  &:hover {
+    background-color: #292727;
+  }
+}
