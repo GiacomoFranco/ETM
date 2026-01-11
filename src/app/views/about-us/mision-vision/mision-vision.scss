@@ -1,5 +1,7 @@
+@use 'mixins' as *;
+
 :host {
-  padding: 11.9rem 0 12.2rem 0;
+  padding: 6.9rem 0 12.2rem 0;
   display: flex;
   justify-content: center;
   background-color: var(--main-black);
@@ -11,17 +13,28 @@
       border-bottom: 1px solid #ffffff28;
     }
 
-
     .mision, .vision {
       display: flex;
-      gap: 2.4rem;
+      gap:  2rem clamp(1rem, 2cqi, 2.4rem);
+      padding: 7.4rem 0;
 
-      // h1 {
-      //   flex: 1 1 auto;
-      // }
-      // p {
-      //   flex: 1 1 auto;
-      // }
+      h1 {
+        flex-basis: clamp(12.8rem, 50cqi, 87.2rem);
+      }
+
+      p {
+        flex: 1 1 auto;
+        flex-basis: 0;
+        flex-grow: 1;
+      }
+      
+      @include custom-breakpoint(1000) {
+        flex-direction: column;
+        
+        h1 {
+          flex-basis: auto;
+        }
+      }
     }
   }
 }
