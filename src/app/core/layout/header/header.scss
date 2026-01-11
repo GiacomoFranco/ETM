@@ -30,6 +30,10 @@
 
   .logo {
     z-index: 6;
+
+    &-extended {
+      width: 14.8rem;
+    }
   }
 
   .burguer-menu {
