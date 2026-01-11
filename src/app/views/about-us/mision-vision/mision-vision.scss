@@ -1,0 +1,27 @@
+:host {
+  padding: 11.9rem 0 12.2rem 0;
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-black);
+
+  section {
+    flex-direction: column;
+    
+    .mision {
+      border-bottom: 1px solid #ffffff28;
+    }
+
+
+    .mision, .vision {
+      display: flex;
+      gap: 2.4rem;
+
+      // h1 {
+      //   flex: 1 1 auto;
+      // }
+      // p {
+      //   flex: 1 1 auto;
+      // }
+    }
+  }
+}

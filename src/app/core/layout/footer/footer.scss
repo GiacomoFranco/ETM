@@ -99,6 +99,8 @@
       font-size: inherit;
       font-weight: 400;
       opacity: 0.5;
+      margin: var(--section-margin);
+      line-height: 1.6rem;
 
       span {
         color: var(--main-white);
