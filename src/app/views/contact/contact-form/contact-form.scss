@@ -14,11 +14,11 @@ section {
 
     .contact-info{
       display: flex;
-      flex-direction: column;
-      flex: 1 1 auto;
       max-width: 71.3rem;
-      gap: 5rem;
+      flex: 1 1 auto;
+      flex-direction: column;
       justify-content: space-between;
+      gap: 5rem;
       
       .info-title {
         h2 {
@@ -44,13 +44,13 @@ section {
     
 
     .contact-form{
-      flex: 1 1 auto;
-      max-width: 90rem;
-      background-color: #E5E6E8;
-      border-radius: 1rem;
-      padding: 5.6rem;
       display: flex;
+      max-width: 90rem;
+      flex: 1 1 auto;
       flex-direction: column;
+      padding: 5.6rem;
+      border-radius: 1rem;
+      background-color: #E5E6E8;
       gap: 4.8rem;
   
       .form-title {
@@ -59,7 +59,7 @@ section {
           font-weight: 400;
         }
   
-        P {
+        p {
           line-height: 2.1rem;
         }
       }
@@ -70,31 +70,31 @@ section {
         gap: 2rem;
   
         .form-field {
-          flex: 1;
           display: flex;
-          flex-direction: column;
           min-width: 23rem;
+          flex: 1;
+          flex-direction: column;
   
           .input-container {
+            position: relative;
             display: flex;
             flex-direction: column;
-            position: relative;
     
             input, textarea {
-              outline: none;
               min-height: 5.6rem;
-              background-color: transparent;
               border: none;
               border-bottom: .15rem solid #696A6C;
-              resize: none;
-              font-size: 1.8rem;
+              background-color: transparent;
               color: var(--main-black);
+              font-size: 1.8rem;
+              outline: none;
+              resize: none;
               
               &:focus ~ label,
               &:valid ~ label {
-                opacity: 1;
                 top: -.6rem;
                 color: #696A6C;
+                opacity: 1;
                 scale: .8;
                 transition: all .3s ease;
               }
@@ -106,12 +106,12 @@ section {
             }
     
             label {
-              transform-origin: top left;
               position: absolute;
-              pointer-events: none;
-              transition: all .3s ease;
               top: 1.5rem;
               color: #bcbcc2;
+              pointer-events: none;
+              transform-origin: top left;
+              transition: all .3s ease;
             }
           }
         }
@@ -130,7 +130,7 @@ section {
       .contact-info {
         .info-title {
           h2 {
-            margin-bottom: 0rem;
+            margin-bottom: 0;
           }
          }
           

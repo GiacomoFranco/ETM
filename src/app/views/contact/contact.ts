@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { GeneralBanner } from "@app/shared/general-banner/general-banner";
-import { ContactForm } from "./contact-form/contact-form";
-import { FaqSection } from "@app/shared/faq-section/faq-section";
+
+import { FaqSection } from '@app/shared/faq-section/faq-section';
+import { GeneralBanner } from '@app/shared/general-banner/general-banner';
+
+import { ContactForm } from './contact-form/contact-form';
 
 @Component({
   selector: 'app-contact',

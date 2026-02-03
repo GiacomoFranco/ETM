@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-whatsapp-redirection',
   imports: [],
   templateUrl: './whatsapp-redirection.html',
-  styleUrl: './whatsapp-redirection.scss'
+  styleUrl: './whatsapp-redirection.scss',
 })
-export class WhatsappRedirection {
-
-}
+export class WhatsappRedirection {}

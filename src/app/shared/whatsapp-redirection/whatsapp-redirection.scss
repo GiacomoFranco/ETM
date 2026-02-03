@@ -1,15 +1,15 @@
 .whatsapp-redirection {
   position: fixed;
-  bottom: 1.9em;
-  right: 1.9rem;
   z-index: 100;
-  background-color: var(--main-orange);
-  width: 5.9rem;
-  aspect-ratio: 1 / 1;
+  right: 1.9rem;
+  bottom: 1.9em;
   display: flex;
-  justify-content: center;
+  width: 5.9rem;
   align-items: center;
+  justify-content: center;
   border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--main-orange);
 
   img {
     width: 2.7rem;

@@ -1,8 +1,11 @@
-import { afterNextRender, Component, signal } from '@angular/core';
+import { Component, afterNextRender, signal } from '@angular/core';
+
 import { SERVICES } from '@app/core/constants';
+
 import Swiper from 'swiper';
 import { Autoplay } from 'swiper/modules';
-import { ServiceCard } from "../service-card/service-card";
+
+import { ServiceCard } from '../service-card/service-card';
 
 @Component({
   selector: 'app-services-swiper-variant',

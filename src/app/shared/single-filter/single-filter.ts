@@ -4,7 +4,7 @@ import { Component, input } from '@angular/core';
   selector: 'app-single-filter',
   imports: [],
   templateUrl: './single-filter.html',
-  styleUrl: './single-filter.scss'
+  styleUrl: './single-filter.scss',
 })
 export class SingleFilter {
   filter = input('filter');

@@ -27,6 +27,7 @@ p {
   color: #b4b5b5;
   font-size: clamp(1.6rem, 9.6cqi, 2rem);
   line-height: clamp(2.1rem, 9.6cqi, 2.5rem);
+
     &.dark-variant {
     color: var(--dark-gray);
   }

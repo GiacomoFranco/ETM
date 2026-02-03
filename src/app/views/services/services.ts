@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { GeneralBanner } from "@app/shared/general-banner/general-banner";
-import { ServicesSection } from "@app/shared";
-import { ProposalSection } from "@app/shared/proposal-section/proposal-section";
-import { GalerySection } from "@app/shared/galery-section/galery-section";
-import { CarBanner } from "@app/shared/car-banner/car-banner";
+
+import { ServicesSection } from '@app/shared';
+import { CarBanner } from '@app/shared/car-banner/car-banner';
+import { GalerySection } from '@app/shared/galery-section/galery-section';
+import { GeneralBanner } from '@app/shared/general-banner/general-banner';
+import { ProposalSection } from '@app/shared/proposal-section/proposal-section';
 
 @Component({
   selector: 'app-services',

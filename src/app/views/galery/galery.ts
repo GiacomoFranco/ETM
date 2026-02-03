@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
+
+import { ServicesSection } from '@app/shared';
 import { GaleryGrid } from '@app/shared/galery-grid/galery-grid';
-import { GeneralBanner } from "@app/shared/general-banner/general-banner";
-import { ServicesSection } from "@app/shared";
+import { GeneralBanner } from '@app/shared/general-banner/general-banner';
 
 @Component({
   selector: 'app-galery',

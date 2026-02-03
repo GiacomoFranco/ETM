@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-pillars',
   imports: [],
   templateUrl: './pillars.html',
-  styleUrl: './pillars.scss'
+  styleUrl: './pillars.scss',
 })
-export class Pillars {
-
-}
+export class Pillars {}

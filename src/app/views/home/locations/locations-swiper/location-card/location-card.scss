@@ -1,5 +1,4 @@
 a {
-  text-decoration: none;
   position: relative;
   display: flex;
   overflow: hidden;
@@ -10,6 +9,7 @@ a {
   padding: 4rem 2.8rem 1.5rem;
   container-type: inline-size;
   cursor: pointer;
+  text-decoration: none;
 }
 
 app-icon {
