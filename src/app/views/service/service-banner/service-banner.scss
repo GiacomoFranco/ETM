@@ -1,0 +1,44 @@
+:host {
+  background-color: var(--main-black);
+  padding: 13.3rem 0 41.8rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 0;
+  max-width: var(--max-width);
+  display: flex;
+  justify-content: center;
+  container-type: inline;
+
+  .banner-container {
+    position: relative;
+    width: 100%;
+    height: 60.2rem;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60.2rem;
+      background-color: var(--main-black);
+      content: '';
+      opacity: 0.6;
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+}

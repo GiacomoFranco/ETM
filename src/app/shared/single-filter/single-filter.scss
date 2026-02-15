@@ -1,14 +1,14 @@
 span {
   display: inline-block;
-  padding: .5rem 2rem;
+  padding: 0.5rem 2rem;
   border-radius: 10rem;
-  background-color: #1A1C1B;
+  background-color: #1a1c1b;
   color: var(--main-white);
   cursor: pointer;
   font-size: 1.5rem;
   line-height: 2.6rem;
   transition: all 0.3s ease-in-out;
-  
+
   &.active {
     background-color: var(--main-white);
     color: var(--main-black);

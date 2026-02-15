@@ -68,7 +68,8 @@ section {
   margin: var(--section-margin);
 }
 
-h1, h2 {
+h1,
+h2 {
   @include custom-text(var(--fs-900), var(--fs-900));
 }
 
@@ -80,7 +81,8 @@ h4 {
   @include custom-text(18px, 18px);
 }
 
-p {
+p,
+pre {
   font-size: 2rem;
   font-weight: 200;
   line-height: 2.84rem;
@@ -94,7 +96,9 @@ b {
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
   appearance: initial;
-  transition: background-color 0s 600000s, color 0s 600000s !important;
+  transition:
+    background-color 0s 600000s,
+    color 0s 600000s !important;
 }
 
 .l-white-text {

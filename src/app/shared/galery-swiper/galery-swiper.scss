@@ -12,10 +12,10 @@
 
     .swiper-slide {
       background-color: var(--light-black);
-      
+
       img {
         transition: all 0.3s ease-in-out;
-        
+
         &:hover {
           opacity: 1;
           transform: scale(1.01);
@@ -27,8 +27,7 @@
         height: 100%;
         cursor: pointer;
         object-fit: cover;
-        opacity: .6;
-
+        opacity: 0.6;
       }
     }
   }

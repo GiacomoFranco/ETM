@@ -1,0 +1,46 @@
+@use 'mixins' as *;
+
+:host {
+  padding: 26rem 0 8.9rem 0;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 8.3rem;
+
+    .service-heading {
+      display: flex;
+      flex-grow: 1;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 3.7rem 3rem;
+
+      h2 {
+        max-width: 84.2rem;
+        flex: 1 0 0;
+
+        &.title-variant {
+          max-width: 104.7rem;
+        }
+      }
+
+      p {
+        max-width: 81.4rem;
+        flex: 1 5 0;
+      }
+
+      @include custom-breakpoint(1300) {
+        flex-direction: column;
+
+        h2 {
+          max-width: none;
+          text-wrap: balance;
+        }
+
+        p {
+          max-width: 1900rem;
+        }
+      }
+    }
+  }
+}

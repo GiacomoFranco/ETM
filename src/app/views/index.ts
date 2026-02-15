@@ -4,3 +4,4 @@ export * from './about-us/about-us';
 export * from './galery/galery';
 export * from './contact/contact';
 export * from './not-found/not-found';
+export * from './service/service';

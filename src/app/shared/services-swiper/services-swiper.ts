@@ -31,11 +31,11 @@ export class ServicesSwiper {
         slidesPerGroup: 1,
         spaceBetween: 10,
         loop: true,
-        modules: [Autoplay],
-        autoplay: {
-          delay: 5000,
-          pauseOnMouseEnter: true,
-        },
+        // modules: [Autoplay],
+        // autoplay: {
+        //   delay: 5000,
+        //   pauseOnMouseEnter: true,
+        // },
         breakpoints: {
           1150: {
             slidesPerView: 2,

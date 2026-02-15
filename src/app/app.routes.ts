@@ -12,6 +12,11 @@ export const routes: Routes = [
     loadComponent: () => import('@views').then((m) => m.Services),
   },
   {
+    title: 'Servicios | EQUIPOS TECNI METÁLICOS S.A.S',
+    path: 'servicios/:service',
+    loadComponent: () => import('@views').then((m) => m.Service),
+  },
+  {
     title: 'Sobre Nosotros | EQUIPOS TECNI METÁLICOS S.A.S',
     path: 'sobre-nosotros',
     loadComponent: () => import('@views').then((m) => m.AboutUs),

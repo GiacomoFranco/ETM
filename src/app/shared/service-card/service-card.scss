@@ -1,14 +1,17 @@
-:host {
+.card-info {
+  cursor: pointer;
+  container-type: inline-size;
   position: relative;
   display: flex;
   height: 100%;
+  flex: 1 1 auto;
   align-items: flex-end;
+  text-decoration: none;
+  line-height: 3.7rem;
   background-image: url('/images/service-image.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  container-type: inline-size;
-  cursor: pointer;
 
   &::after {
     position: absolute;
@@ -19,27 +22,25 @@
     background-color: var(--main-black);
     content: '';
     opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
   }
-}
-
-.card-info {
-  z-index: 1;
-  display: flex;
-  flex: 1 1 auto;
-  align-items: center;
-  padding: 2.1rem 0;
-  border-top: 0.1rem solid var(--darker-gray);
-  margin: 0 3.4rem;
-  line-height: 3.7rem;
 
   h4 {
+    padding: 2.1rem 0;
     font-weight: 300;
     letter-spacing: normal;
+    z-index: 1;
+    border-top: 0.1rem solid var(--darker-gray);
+    width: 100%;
+    margin: 0 3.4rem;
   }
 }
 
 @container (max-width: 455px) {
   .card-info {
-    margin: 0 1.4rem;
+    h4 {
+      margin: 0 1.4rem;
+    }
   }
 }

@@ -8,15 +8,16 @@
 
   section {
     flex-direction: column;
-    
+
     .mision {
       border-bottom: 1px solid #ffffff28;
     }
 
-    .mision, .vision {
+    .mision,
+    .vision {
       display: flex;
       padding: 7.4rem 0;
-      gap:  2rem clamp(1rem, 2cqi, 2.4rem);
+      gap: 2rem clamp(1rem, 2cqi, 2.4rem);
 
       h1 {
         flex-basis: clamp(12.8rem, 50cqi, 87.2rem);
@@ -27,10 +28,10 @@
         flex-basis: 0;
         flex-grow: 1;
       }
-      
+
       @include custom-breakpoint(1000) {
         flex-direction: column;
-        
+
         h1 {
           flex-basis: auto;
         }

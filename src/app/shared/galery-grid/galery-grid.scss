@@ -9,27 +9,25 @@
     flex-direction: column;
     gap: 4.8rem;
 
-
     h1 {
       max-width: 103.8rem;
     }
 
-      img {
-        max-width: 100%;
-        border-radius: .3rem;
-        margin-bottom: 2.3rem;
-        cursor: pointer;
-        object-fit: contain;
-        opacity: .6;
-        transition: all 0.3s ease-in-out;
+    img {
+      max-width: 100%;
+      border-radius: 0.3rem;
+      margin-bottom: 2.3rem;
+      cursor: pointer;
+      object-fit: contain;
+      opacity: 0.6;
+      transition: all 0.3s ease-in-out;
 
-        &:hover {
-          opacity: 1;
-          transform: scale(1.01);
-        }
+      &:hover {
+        opacity: 1;
+        transform: scale(1.01);
       }
-    
-    
+    }
+
     .gallery {
       column-gap: 2.3rem;
       columns: 4 220px;
