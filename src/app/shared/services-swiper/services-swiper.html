@@ -9,17 +9,10 @@
 </div> -->
 <div class="swiper" [id]="swiperID">
   <div class="swiper-wrapper">
-    <div class="swiper-slide">
-      <app-service-card />
-    </div>
-    <div class="swiper-slide">
-      <app-service-card />
-    </div>
-    <div class="swiper-slide">
-      <app-service-card />
-    </div>
-    <div class="swiper-slide">
-      <app-service-card />
-    </div>
+    @for (service of services; track service.slug) {
+      <div class="swiper-slide">
+        <app-service-card [service]="service" imageOrientation="horizontal" />
+      </div>
+    }
   </div>
 </div>

@@ -22,7 +22,7 @@ export class ServicesSwiperVariant {
 
   swiper = signal<Swiper | undefined>(undefined);
   swiperID: string = 'services';
-  services = [];
+  services = SERVICES;
 
   initSwiper(): void {
     this.swiper.set(
@@ -34,18 +34,18 @@ export class ServicesSwiperVariant {
           nextEl: '#next',
           prevEl: '#prev',
         },
-        // modules: [Autoplay],
-        // autoplay: {
-        //   delay: 5000,
-        //   pauseOnMouseEnter: true,
-        // },
-        // breakpoints: {
-        //   1150: {
-        //     slidesPerView: 4,
-        //     slidesPerGroup: 4,
-        //     spaceBetween: 33,
-        //   },
-        // },
+        modules: [Autoplay],
+        autoplay: {
+          delay: 5000,
+          pauseOnMouseEnter: true,
+        },
+        breakpoints: {
+          1150: {
+            slidesPerView: 4,
+            slidesPerGroup: 4,
+            spaceBetween: 33,
+          },
+        },
       }),
     );
   }

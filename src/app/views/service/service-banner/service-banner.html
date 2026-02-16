@@ -1,5 +1,6 @@
 <section>
+  @let currentService = service();
   <div class="banner-container">
-    <img src="/images/service-image-secondary.webp" alt="Service Banner" />
+    <img [src]="currentService.horizontalImage" [alt]="currentService.title" />
   </div>
 </section>

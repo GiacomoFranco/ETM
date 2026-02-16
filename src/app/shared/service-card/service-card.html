@@ -1,3 +1,9 @@
-<a class="card-info" routerLink="/servicios/mantenimiento-y-reparacion-de-equipos-especiales">
-  <h4 class="l-white-text">Mantenimiento y Reparación de Equipos Especiales</h4>
+<a class="card-info" [routerLink]="'/servicios/' + service().slug">
+  <img
+    class="card-image"
+    [src]="imageOrientation() === 'vertical' ? service().verticalImage : service().horizontalImage"
+    [alt]="service().title"
+    loading="lazy"
+    decoding="async" />
+  <h4 class="l-white-text">{{ service().title }}</h4>
 </a>
