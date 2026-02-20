@@ -1,0 +1,38 @@
+@if (isOpen) {
+  <div class="preview-overlay" (click)="closePreview()">
+    <button
+      type="button"
+      class="close-button"
+      aria-label="Cerrar previsualización"
+      (click)="closePreview()">
+      ✕
+    </button>
+
+    <button
+      type="button"
+      class="nav-button left"
+      aria-label="Imagen anterior"
+      (click)="$event.stopPropagation(); previousImage()">
+      <app-icon class="nav-button-icon" name="left-arrow" colorName="LightWhite" />
+    </button>
+
+    <div
+      class="preview-content"
+      (click)="$event.stopPropagation()"
+      (wheel)="onPreviewWheel($event)"
+      (pointerdown)="onPointerDown($event)"
+      (pointerup)="onPointerUp($event)">
+      @if (images[activeIndex]; as currentImage) {
+        <img [src]="currentImage.src" [alt]="currentImage.alt" />
+      }
+    </div>
+
+    <button
+      type="button"
+      class="nav-button right"
+      aria-label="Siguiente imagen"
+      (click)="$event.stopPropagation(); nextImage()">
+      <app-icon class="nav-button-icon" name="right-arrow" colorName="LightWhite" />
+    </button>
+  </div>
+}

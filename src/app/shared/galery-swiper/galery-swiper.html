@@ -1,13 +1,16 @@
 <div class="swiper" [id]="swiperID()">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="/images/img_1.webp" alt="" /></div>
-    <div class="swiper-slide"><img src="/images/img_2.webp" alt="" /></div>
-    <div class="swiper-slide"><img src="/images/img_3.webp" alt="" /></div>
-    <div class="swiper-slide"><img src="/images/img_4.webp" alt="" /></div>
-    <div class="swiper-slide"><img src="/images/img_5.webp" alt="" /></div>
-    <div class="swiper-slide"><img src="/images/img_6.webp" alt="" /></div>
-    <div class="swiper-slide"><img src="/images/img_7.webp" alt="" /></div>
-    <div class="swiper-slide"><img src="/images/img_8.webp" alt="" /></div>
-    <div class="swiper-slide"><img src="/images/img_10.webp" alt="" /></div>
+    @for (image of images; track image.src; let index = $index) {
+      <div class="swiper-slide">
+        <img [src]="image.src" [alt]="image.alt" (click)="openPreview(index)" />
+      </div>
+    }
   </div>
 </div>
+
+<app-galery-preview
+  [images]="images"
+  [isOpen]="isPreviewOpen()"
+  [activeIndex]="activeIndex()"
+  (closed)="closePreview()"
+  (activeIndexChange)="onPreviewIndexChange($event)"></app-galery-preview>

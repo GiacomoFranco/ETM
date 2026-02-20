@@ -1,11 +1,14 @@
 import { Component, afterNextRender, input, signal } from '@angular/core';
 
+import { GALLERY_IMAGES } from '@app/core/constants';
+import { GaleryPreview } from '@app/shared';
+
 import Swiper from 'swiper';
 import { Autoplay } from 'swiper/modules';
 
 @Component({
   selector: 'app-galery-swiper',
-  imports: [],
+  imports: [GaleryPreview],
   templateUrl: './galery-swiper.html',
   styleUrl: './galery-swiper.scss',
 })
@@ -18,7 +21,22 @@ export class GalerySwiper {
 
   swiperID = input.required<string>();
   swiper = signal<Swiper | undefined>(undefined);
-  // reviews = REVIEWS;
+  images = GALLERY_IMAGES;
+  isPreviewOpen = signal(false);
+  activeIndex = signal(0);
+
+  openPreview(imageIndex: number): void {
+    this.activeIndex.set(imageIndex);
+    this.isPreviewOpen.set(true);
+  }
+
+  closePreview(): void {
+    this.isPreviewOpen.set(false);
+  }
+
+  onPreviewIndexChange(index: number): void {
+    this.activeIndex.set(index);
+  }
 
   initSwiper(): void {
     this.swiper.set(
