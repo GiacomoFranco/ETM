@@ -3,3 +3,4 @@ export * from './buttons.model';
 export * from './colors.model';
 export * from './icon.model';
 export * from './service.model';
+export * from './faq.model';

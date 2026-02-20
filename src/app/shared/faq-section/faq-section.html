@@ -16,18 +16,14 @@
     redirection="/sobre-nosotros" />
   <div class="questions">
     <div class="left-column column">
-      <app-single-question />
-      <app-single-question />
-      <app-single-question />
-      <app-single-question />
-      <app-single-question />
+      @for (faq of firstColumnFaqs; track faq.question) {
+        <app-single-question [question]="faq.question" [answer]="faq.answer" />
+      }
     </div>
     <div class="right-column column">
-      <app-single-question />
-      <app-single-question />
-      <app-single-question />
-      <app-single-question />
-      <app-single-question />
+      @for (faq of secondColumnFaqs; track faq.question) {
+        <app-single-question [question]="faq.question" [answer]="faq.answer" />
+      }
     </div>
   </div>
 </section>
