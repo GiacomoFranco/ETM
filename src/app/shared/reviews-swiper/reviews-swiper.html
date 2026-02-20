@@ -1,19 +1,14 @@
 <div class="swiper" [id]="swiperID()">
   <div class="swiper-wrapper">
-    <div class="swiper-slide">
-      <app-review-card />
-    </div>
-    <div class="swiper-slide">
-      <app-review-card />
-    </div>
-    <div class="swiper-slide">
-      <app-review-card />
-    </div>
-    <div class="swiper-slide">
-      <app-review-card />
-    </div>
-    <div class="swiper-slide">
-      <app-review-card />
-    </div>
+    @for (review of reviews; track review.client.name) {
+      <div class="swiper-slide">
+        <app-review-card
+          [clientName]="review.client.name"
+          [clientImage]="review.client.image"
+          [clientRole]="review.client.role"
+          [rating]="review.rating"
+          [review]="review.review" />
+      </div>
+    }
   </div>
 </div>

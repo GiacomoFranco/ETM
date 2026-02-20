@@ -1,20 +1,13 @@
 <div class="review-header">
   <div class="client-image">
-    <img src="/images/user-image.webp" alt="" />
+    <img [src]="clientImage()" [alt]="clientName()" />
   </div>
   <div class="client-info">
-    <h5>Carlos Ramirez</h5>
-    <p>Gerente de Operaciones, Transportes Andinos</p>
-    <app-rating [rating]="5"></app-rating>
+    <h5>{{ clientName() }}</h5>
+    <p>{{ clientRole() }}</p>
+    <app-rating [rating]="rating()"></app-rating>
   </div>
 </div>
 <div class="review-content">
-  <p>
-    La empresa ha sido un aliado estratégico en la fabricación de estructuras metálicas a medida.
-    <b>
-      Su capacidad técnica y cumplimiento nos han permitido desarrollar proyectos complejos con
-      altos estándares de calidad y seguridad
-    </b>
-    , siempre con un acompañamiento cercano y profesional.
-  </p>
+  <p>{{ review() }}</p>
 </div>
