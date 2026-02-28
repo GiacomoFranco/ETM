@@ -17,7 +17,7 @@
             : 'MainGray'
       " />
   </div>
-  <div #panel class="question-answer">
+  <div #panel class="question-answer" (click)="$event.stopPropagation()">
     <p [innerHTML]="answer()"></p>
   </div>
 </div>

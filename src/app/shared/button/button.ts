@@ -15,6 +15,7 @@ export class Button {
   icon = input<null | IconName>(null);
   text = input<null | string>(null);
   link = input<null | string>(null);
+  targetBlank = input<boolean>(false);
   variant = input<ButtonVariantName>('BlackOutline');
   buttonStyle = computed<ButtonVariant>(() => BUTTON_VARIANTS[this.variant()]);
 }

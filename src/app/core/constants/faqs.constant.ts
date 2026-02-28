@@ -19,7 +19,7 @@ export const FAQS: Faqs = [
   {
     question: '¿Cómo solicito una cotización?',
     answer:
-      'Puedes contactarnos por nuestros canales de atención para compartir el requerimiento. Con esa información te enviamos una cotización personalizada.',
+      'Puedes contactarnos por nuestros canales de atención para compartir el requerimiento. Con esa información te enviamos una cotización personalizada. <br><br> Sitio web: <a href="https://www.etmsas.com" target="_blank" rel="noopener noreferrer">www.etmsas.com</a><br> Correo: <a href="mailto:comercial@etmsas.com">comercial@etmsas.com</a><br> WhatsApp: <a href="https://wa.link/tq1jv3" target="_blank" rel="noopener noreferrer">+57 311 6234807</a>.',
   },
   {
     question:

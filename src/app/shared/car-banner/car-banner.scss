@@ -31,6 +31,10 @@ section {
     flex-direction: column;
     margin: 5rem 0;
     gap: 4rem;
+
+    app-button {
+      max-width: fit-content;
+    }
   }
 
   .image-container {

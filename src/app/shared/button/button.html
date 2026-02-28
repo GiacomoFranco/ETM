@@ -1,5 +1,5 @@
 @if (link()) {
-  <a [href]="link()" [class]="buttonStyle().class">
+  <a [href]="link()" [target]="targetBlank() ? '_blank' : '_self'" [class]="buttonStyle().class">
     {{ text() }}
     @if (icon()) {
       <app-icon [name]="icon()!" [colorName]="buttonStyle().iconColor" />
