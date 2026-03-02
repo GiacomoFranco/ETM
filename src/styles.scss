@@ -24,6 +24,7 @@
   --main-black-opacity: rgb(18 19 21 / 95%);
   --fs-900: clamp(3.2rem, 3.9cqi, 6rem);
   --fs-800: clamp(3.2rem, 3cqi, 6rem);
+  --fs-850: clamp(3.2rem, 3cqi, 4.8rem);
   --fs-700: clamp(2.2rem, 1.7cqi, 3.2rem);
 }
 
@@ -71,6 +72,10 @@ section {
 h1,
 h2 {
   @include custom-text(var(--fs-900), var(--fs-900));
+}
+
+h3 {
+  @include custom-text(var(--fs-850), var(--fs-850));
 }
 
 h4 {
