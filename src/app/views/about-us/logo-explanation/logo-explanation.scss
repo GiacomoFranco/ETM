@@ -1,3 +1,5 @@
+@use 'mixins' as *;
+
 :host {
   background-color: var(--main-black);
   display: flex;
@@ -33,4 +35,19 @@ section {
   padding: 4.8rem;
   gap: 5rem;
   min-width: 50rem;
+}
+
+@include custom-breakpoint(600) {
+  .logo-explanation {
+    min-width: initial;
+  }
+
+  .logo-image {
+    min-height: initial;
+    padding: 2rem 4.8rem 0 4.8rem;
+
+    img {
+      width: 100%;
+    }
+  }
 }
