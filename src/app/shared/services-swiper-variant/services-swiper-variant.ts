@@ -27,9 +27,9 @@ export class ServicesSwiperVariant {
   initSwiper(): void {
     this.swiper.set(
       new Swiper(`#${this.swiperID}`, {
-        slidesPerView: 4,
+        slidesPerView: 1,
         slidesPerGroup: 1,
-        spaceBetween: 33,
+        spaceBetween: 16,
         navigation: {
           nextEl: '#next',
           prevEl: '#prev',
@@ -40,9 +40,19 @@ export class ServicesSwiperVariant {
           pauseOnMouseEnter: true,
         },
         breakpoints: {
-          1150: {
+          750: {
+            slidesPerView: 2,
+            slidesPerGroup: 1,
+            spaceBetween: 20,
+          },
+          1000: {
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+            spaceBetween: 33,
+          },
+          1400: {
             slidesPerView: 4,
-            slidesPerGroup: 4,
+            slidesPerGroup: 1,
             spaceBetween: 33,
           },
         },
