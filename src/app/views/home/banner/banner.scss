@@ -5,17 +5,53 @@
   width: 100vw;
   min-height: min(100vh, 108rem);
   justify-content: center;
-  background-image: url('/images/banner.webp');
-  background-position: bottom center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  overflow: hidden;
+  position: relative;
 }
 
 section {
+  display: flex;
+  width: 100vw;
+  min-height: inherit;
   align-items: flex-end;
   padding-top: 12.5rem;
+  z-index: 0;
+
+  .background-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  .welder-layer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100vw;
+    max-width: 100vw;
+    height: auto;
+    pointer-events: none;
+    will-change: transform;
+    transform-origin: right bottom;
+
+    @include custom-breakpoint(1024) {
+      opacity: 0.85;
+    }
+
+    @include custom-breakpoint(700) {
+      opacity: 0.55;
+    }
+  }
 
   .banner-content {
+    position: relative;
+    z-index: 3;
     display: flex;
     max-width: 70.5rem;
     flex-direction: column;
@@ -42,5 +78,17 @@ section {
         }
       }
     }
+  }
+
+  .gradient-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    will-change: transform;
   }
 }
