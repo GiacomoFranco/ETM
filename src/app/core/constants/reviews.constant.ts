@@ -14,7 +14,7 @@ export const REVIEWS: Reviews = [
   {
     client: {
       name: 'Pilar Restrepo Ochoa',
-      image: '/images/user-image.webp',
+      image: '/images/pilar.png',
       role: 'Directora ambiental y aseo Aquaterra E.S.P',
     },
     rating: 5,
