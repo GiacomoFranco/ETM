@@ -1,0 +1,48 @@
+<section class="timeline-section" #pinRef>
+  <article class="trajectory-intro">
+    <h1 class="black-text">Una trayectoria construida sobre calidad, confianza y experiencia.</h1>
+    <p class="black-text">
+      A lo largo de nuestra trayectoria, hemos consolidado un servicio basado en la calidad, la
+      confianza y la experiencia, ofreciendo mantenimiento, reparación y fabricación a la medida.
+      <b>Nos enfocamos en optimizar el rendimiento y prolongar la vida útil de su maquinaria</b>
+      con soluciones confiables y materiales de la más alta calidad.
+    </p>
+  </article>
+
+  <article class="timeline-stage">
+    <header class="timeline-header">
+      <div class="track" #trackRef aria-hidden="true">
+        <span class="track-progress" [style.width.%]="progressWidth()"></span>
+      </div>
+
+      <div
+        class="year-points"
+        role="list"
+        aria-label="Línea de tiempo de ETM"
+        [style.--point-count]="milestones.length">
+        @for (milestone of milestones; track milestone.year; let index = $index) {
+          <div
+            role="listitem"
+            class="year-point"
+            [class.is-active]="activeIndex() === index"
+            [class.is-passed]="activeIndex() > index"
+            [class.is-visible]="isPointVisible(index)">
+            <span class="year-label">{{ milestone.year }}</span>
+            <span class="year-dot" #dotRef></span>
+          </div>
+        }
+      </div>
+    </header>
+
+    <div class="timeline-content">
+      <div class="copy">
+        <h3 class="gray-text">{{ activeMilestone().title }}</h3>
+        <p class="black-text">{{ activeMilestone().description }}</p>
+      </div>
+
+      <aside class="year-preview" aria-hidden="true">
+        <span class="active-year">{{ activeMilestone().year }}</span>
+      </aside>
+    </div>
+  </article>
+</section>
