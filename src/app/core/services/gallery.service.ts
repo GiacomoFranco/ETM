@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 
-import { GalleryImages, TGalleryResponse } from '@core/models';
+import { Observable, map } from 'rxjs';
 
-import { map, Observable } from 'rxjs';
+import { GalleryImages, TGalleryResponse } from '@core/models';
 
 @Injectable({
   providedIn: 'root',
@@ -13,15 +13,13 @@ export class GalleryService {
   private readonly httpClient = inject(HttpClient);
 
   getGalleryImages(): Observable<GalleryImages> {
-    return this.httpClient
-      .get<TGalleryResponse>(`${this.baseUrl}/gallery`)
-      .pipe(
-        map((images) =>
-          images.map((image) => ({
-            src: image.url,
-            alt: image.alt || image.title || 'Imagen de galeria ETM',
-          })),
-        ),
-      );
+    return this.httpClient.get<TGalleryResponse>(`${this.baseUrl}/gallery`).pipe(
+      map((images) =>
+        images.map((image) => ({
+          src: image.url,
+          alt: image.alt || image.title || 'Imagen de galeria ETM',
+        })),
+      ),
+    );
   }
 }
