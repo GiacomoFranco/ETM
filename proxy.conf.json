@@ -1,0 +1,10 @@
+{
+  "/etm-api": {
+    "target": "https://admin.etmsas.com",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/etm-api": ""
+    }
+  }
+}

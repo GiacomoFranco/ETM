@@ -1,6 +1,9 @@
-import { Component, afterNextRender, input, signal } from '@angular/core';
+import { Component, afterNextRender, inject, input, signal } from '@angular/core';
+
+import { catchError, of } from 'rxjs';
 
 import { GALLERY_IMAGES } from '@app/core/constants';
+import { FeaturedImagesService } from '@app/core/services/featured-images.service';
 import { GaleryPreview } from '@app/shared';
 
 import Swiper from 'swiper';
@@ -13,8 +16,11 @@ import { Autoplay } from 'swiper/modules';
   styleUrl: './galery-swiper.scss',
 })
 export class GalerySwiper {
+  private readonly featuredImagesService = inject(FeaturedImagesService);
+
   constructor() {
     afterNextRender(() => {
+      this.loadFeaturedImages();
       this.initSwiper();
     });
   }
@@ -36,6 +42,15 @@ export class GalerySwiper {
 
   onPreviewIndexChange(index: number): void {
     this.activeIndex.set(index);
+  }
+
+  private loadFeaturedImages(): void {
+    this.featuredImagesService
+      .getFeaturedImages()
+      .pipe(catchError(() => of(GALLERY_IMAGES.slice(0, 8))))
+      .subscribe((images) => {
+        this.images = images;
+      });
   }
 
   initSwiper(): void {
