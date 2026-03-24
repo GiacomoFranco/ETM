@@ -17,11 +17,8 @@ import { Subscription } from 'rxjs';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-interface TimelineMilestone {
-  year: string;
-  title: string;
-  description: string;
-}
+import { TIMELINE_MILESTONES } from './timeline.constant';
+import { TimelineMilestone } from './timeline.model';
 
 @Component({
   selector: 'app-timeline',
@@ -40,38 +37,7 @@ export class Timeline {
   private resizeTimeout: ReturnType<typeof setTimeout> | undefined;
   private dotRefsChangeSub: Subscription | undefined;
 
-  readonly milestones: TimelineMilestone[] = [
-    {
-      year: '2022',
-      title: 'Consolidación de nuestra sede ubicada en la ciudad de Cartagena.',
-      description:
-        'A lo largo de nuestra trayectoria, hemos consolidado un servicio basado en la calidad, la confianza y la experiencia, ofreciendo mantenimiento, reparación y fabricación a la medida. Nos enfocamos en optimizar el rendimiento y prolongar la vida útil de su maquinaria con soluciones confiables y materiales de la más alta calidad.',
-    },
-    {
-      year: '2023',
-      title: 'Fortalecimos nuestros procesos de mantenimiento especializado.',
-      description:
-        'Incorporamos mejores prácticas técnicas para aumentar la eficiencia operativa y reducir tiempos de parada, garantizando resultados consistentes en cada servicio.',
-    },
-    {
-      year: '2024',
-      title: 'Ampliamos capacidades en reparación y fabricación a medida.',
-      description:
-        'Desarrollamos soluciones personalizadas para distintos sectores industriales, manteniendo altos estándares de calidad y precisión en cada proyecto.',
-    },
-    {
-      year: '2025',
-      title: 'Elevamos nuestros estándares de control y calidad de materiales.',
-      description:
-        'Reforzamos criterios de selección e inspección para entregar componentes y servicios más confiables, duraderos y alineados con las necesidades de nuestros clientes.',
-    },
-    {
-      year: '2026',
-      title: 'Impulsamos una etapa de crecimiento con enfoque en confianza y servicio.',
-      description:
-        'Seguimos proyectando nuestra trayectoria con compromiso, acompañamiento técnico y soluciones integrales que prolongan la vida útil de la maquinaria.',
-    },
-  ];
+  readonly milestones: TimelineMilestone[] = TIMELINE_MILESTONES;
 
   readonly activeIndex = signal(0);
   readonly dotCenterPercents = signal<number[]>([]);
