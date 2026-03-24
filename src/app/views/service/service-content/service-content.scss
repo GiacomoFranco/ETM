@@ -2,6 +2,8 @@
 
 :host {
   padding: 26rem 0 8.9rem 0;
+  display: flex;
+  justify-content: center;
 
   section {
     display: flex;
@@ -40,6 +42,30 @@
         p {
           max-width: 1900rem;
         }
+      }
+    }
+
+    .service-content {
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+      }
+
+      ::ng-deep p {
+        margin: 0;
+      }
+
+      ::ng-deep ul {
+        margin: 0;
+        padding-left: 2.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+
+      ::ng-deep li {
+        line-height: 1.5;
       }
     }
   }

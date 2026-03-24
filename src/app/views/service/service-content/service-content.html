@@ -5,6 +5,6 @@
     <p class="black-text">{{ currentService.summary }}</p>
   </div>
   <div class="service-content">
-    <p>{{ currentService.description }}</p>
+    <div [innerHTML]="currentService.description"></div>
   </div>
 </section>
