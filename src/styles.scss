@@ -87,10 +87,15 @@ h4 {
 }
 
 p,
-pre {
+pre,
+ul {
   font-size: 2rem;
   font-weight: 200;
   line-height: 2.84rem;
+}
+
+strong {
+  font-weight: 600;
 }
 
 b {
