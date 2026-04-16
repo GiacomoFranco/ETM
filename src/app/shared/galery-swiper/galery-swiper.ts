@@ -1,6 +1,5 @@
-import { Component, afterNextRender, inject, input, signal } from '@angular/core';
-
-import { catchError, of } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Component, PLATFORM_ID, inject, input, signal } from '@angular/core';
 
 import { GALLERY_IMAGES } from '@app/core/constants';
 import { FeaturedImagesService } from '@app/core/services/featured-images.service';
@@ -15,14 +14,14 @@ import { Autoplay } from 'swiper/modules';
   templateUrl: './galery-swiper.html',
   styleUrl: './galery-swiper.scss',
 })
-export class GalerySwiper {
+export class GalerySwiper implements AfterViewInit {
   private readonly featuredImagesService = inject(FeaturedImagesService);
+  private readonly platformId = inject(PLATFORM_ID);
 
-  constructor() {
-    afterNextRender(() => {
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
       this.loadFeaturedImages();
-      this.initSwiper();
-    });
+    }
   }
 
   swiperID = input.required<string>();
@@ -45,12 +44,10 @@ export class GalerySwiper {
   }
 
   private loadFeaturedImages(): void {
-    this.featuredImagesService
-      .getFeaturedImages()
-      .pipe(catchError(() => of(GALLERY_IMAGES.slice(0, 8))))
-      .subscribe((images) => {
-        this.images = images;
-      });
+    this.featuredImagesService.getFeaturedImages().subscribe((images) => {
+      this.images = images;
+      setTimeout(() => this.initSwiper(), 100);
+    });
   }
 
   initSwiper(): void {
