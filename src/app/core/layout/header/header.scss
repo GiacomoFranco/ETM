@@ -26,6 +26,11 @@
   a {
     color: var(--light-white);
     text-decoration: none;
+
+    &.current-page {
+      margin-top: 0.1rem;
+      border-bottom: 0.1rem solid var(--main-orange);
+    }
   }
 
   .logo {

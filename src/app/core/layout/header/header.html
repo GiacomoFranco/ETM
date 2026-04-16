@@ -2,10 +2,10 @@
   <img routerLink="/" class="logo logo-extended" src="/images/etm-logo-extended.svg" alt="ETM Logo">
   <!-- <img routerLink="/" class="logo" src="/images/etm-logo.svg" alt="" /> -->
   <nav class="desktop-nav">
-    <a routerLink="/">Inicio</a>
-    <a routerLink="/servicios">Servicios</a>
-    <a routerLink="/sobre-nosotros">Nosotros</a>
-    <a routerLink="/galeria">Galería</a>
+    <a routerLink="/" routerLinkActive="current-page" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+    <a routerLink="/servicios" routerLinkActive="current-page" [routerLinkActiveOptions]="{exact: true}">Servicios</a>
+    <a routerLink="/sobre-nosotros" routerLinkActive="current-page" [routerLinkActiveOptions]="{exact: true}">Nosotros</a>
+    <a routerLink="/galeria" routerLinkActive="current-page" [routerLinkActiveOptions]="{exact: true}">Galería</a>
     <app-button text="Contacto" icon="navigation" variant="WhiteOutline" link="/contacto" />
   </nav>
 
