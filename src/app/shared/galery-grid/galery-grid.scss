@@ -42,6 +42,7 @@
       background: #121315;
       background: linear-gradient(0deg, rgb(18 19 21 / 100%) 0%, rgb(18 19 21 / 0%) 50%);
       content: '';
+      pointer-events: none;
     }
   }
 }

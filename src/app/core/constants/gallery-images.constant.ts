@@ -38,35 +38,35 @@ export const GALLERY_IMAGES: GalleryImages = [
     alt: 'Servicio técnico para vehículo eléctrico en instalaciones ETM',
   },
   {
-    src: '/images/img_11.jpeg',
+    src: '/images/img_11.webp',
     alt: 'Detalle de intervención mecánica con herramientas especializadas',
   },
   {
-    src: '/images/img_12.jpeg',
+    src: '/images/img_12.webp',
     alt: 'Vista de trabajo de reparación estructural en vehículo de carga',
   },
   {
-    src: '/images/img_13.jpeg',
+    src: '/images/img_13.webp',
     alt: 'Proceso técnico de mantenimiento correctivo en equipo especial',
   },
   {
-    src: '/images/img_14.jpeg',
+    src: '/images/img_14.webp',
     alt: 'Operación de taller con personal calificado en servicios ETM',
   },
   {
-    src: '/images/img_15.jpeg',
+    src: '/images/img_15.webp',
     alt: 'Inspección y ajuste de componentes en sistema de descargue',
   },
   {
-    src: '/images/img_16.jpeg',
+    src: '/images/img_16.webp',
     alt: 'Actividad de servicio técnico para optimización de flota',
   },
   {
-    src: '/images/img_17.jpeg',
+    src: '/images/img_17.webp',
     alt: 'Revisión operativa de unidad industrial en área de mantenimiento',
   },
   {
-    src: '/images/img_18.jpeg',
+    src: '/images/img_18.webp',
     alt: 'Entrega de trabajo finalizado en proyecto técnico de ETM',
   },
 ];

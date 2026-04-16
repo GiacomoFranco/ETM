@@ -9,7 +9,7 @@ import { GalleryImages, TGalleryResponse } from '@core/models';
   providedIn: 'root',
 })
 export class GalleryService {
-  private readonly baseUrl = '/etm-api/wp-json/api/v1';
+  private readonly baseUrl = 'https://admin.etmsas.com/wp-json/api/v1';
   private readonly httpClient = inject(HttpClient);
 
   getGalleryImages(): Observable<GalleryImages> {
