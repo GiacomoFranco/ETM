@@ -10,8 +10,11 @@
 <div class="swiper" [id]="swiperID">
   <div class="swiper-wrapper">
     @for (service of services; track service.slug) {
-      <div class="swiper-slide">
-        <app-service-card [service]="service" imageOrientation="horizontal" />
+      <div class="swiper-slide" [class.slide-visible]="isSlideVisible($index)">
+        <app-service-card
+          [service]="service"
+          imageOrientation="horizontal"
+          (imageLoaded)="onCardImageLoaded($index)" />
       </div>
     }
   </div>

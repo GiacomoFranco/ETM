@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { Service } from '@app/core/models';
@@ -12,4 +12,9 @@ import { Service } from '@app/core/models';
 export class ServiceCard {
   service = input.required<Service>();
   imageOrientation = input<'horizontal' | 'vertical'>('horizontal');
+  imageLoaded = output<void>();
+
+  onImageLoad(): void {
+    this.imageLoaded.emit();
+  }
 }
