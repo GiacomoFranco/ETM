@@ -64,13 +64,13 @@ export class Banner {
 
     this.motionState.progress = 0;
     this.motionState.introOffset = 120;
-    this.motionState.backgroundIntroScale = 1.12;
+    this.motionState.backgroundIntroScale = 1.2;
     this.applyLayerTransforms(backgroundLayer, welderLayer);
 
     this.introTween = gsap.to(this.motionState, {
       introOffset: 0,
       backgroundIntroScale: 1,
-      duration: 1,
+      duration: 1.5,
       ease: 'power3.out',
       onUpdate: () => {
         this.applyLayerTransforms(backgroundLayer, welderLayer);

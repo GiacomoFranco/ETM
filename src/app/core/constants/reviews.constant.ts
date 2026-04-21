@@ -4,7 +4,7 @@ export const REVIEWS: Reviews = [
   {
     client: {
       name: 'Ricardo Castañeda',
-      image: '/images/user-image.webp',
+      image: '/images/user.svg',
       role: 'Subgerente de Servicio',
     },
     rating: 5,
@@ -24,7 +24,7 @@ export const REVIEWS: Reviews = [
   {
     client: {
       name: 'Andrés Mejía',
-      image: '/images/user-image.webp',
+      image: '/images/user.svg',
       role: 'Jefe de Mantenimiento, Carga Regional',
     },
     rating: 4.5,
@@ -34,7 +34,7 @@ export const REVIEWS: Reviews = [
   {
     client: {
       name: 'Natalia Herrera',
-      image: '/images/user-image.webp',
+      image: '/images/user.svg',
       role: 'Directora Técnica, Movilidad Sostenible SAS',
     },
     rating: 5,
@@ -44,7 +44,7 @@ export const REVIEWS: Reviews = [
   {
     client: {
       name: 'Felipe Cárdenas',
-      image: '/images/user-image.webp',
+      image: '/images/user.svg',
       role: 'Supervisor Operativo, Industria y Transporte',
     },
     rating: 4,
