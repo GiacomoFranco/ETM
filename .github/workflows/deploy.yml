@@ -1,0 +1,74 @@
+name: Build & Deploy Angular
+
+on:
+  # ── Disparado por push a main (cambios de código)
+  push:
+    branches:
+      - main
+
+  # ── Disparado por WordPress al publicar/actualizar contenido
+  repository_dispatch:
+    types: [wp_content_updated]
+
+jobs:
+  build-and-deploy:
+    name: Build Angular SSG y deploy a Colombia Hosting
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. Checkout del repositorio
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── 2. Setup Node.js (Angular 20 requiere Node 20+)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # ── 3. Instalar dependencias
+      - name: Instalar dependencias
+        run: npm ci
+
+      # ── 4. Build + Prerender (SSG)
+      #       Angular 20 con @angular/ssr descubre las rutas automáticamente
+      #       desde app.routes.ts — no se necesita routesFile
+      - name: Build Angular (SSG + prerender)
+        run: npx ng build --configuration production
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
+
+      # ── 5. Verificar que el build generó los archivos HTML
+      - name: Verificar output
+        run: |
+          echo "=== Archivos en dist/browser ==="
+          find dist/browser -name "*.html" | head -30
+          echo "Total HTML files: $(find dist/browser -name '*.html' | wc -l)"
+
+      # ── 6. Deploy por FTP a Colombia Hosting
+      - name: Deploy FTP a Colombia Hosting
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/browser/
+          server-dir: /public_html/
+          # Solo sube archivos que cambiaron (más rápido en builds frecuentes)
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+
+      # ── 7. Notificación del resultado
+      - name: Notificar resultado
+        if: always()
+        run: |
+          if [ "${{ job.status }}" = "success" ]; then
+            echo "✅ Deploy exitoso - $(date '+%Y-%m-%d %H:%M:%S UTC')"
+            echo "Rutas prerenderizadas: $(find dist/browser -name '*.html' | wc -l)"
+          else
+            echo "❌ El build o deploy falló - revisar logs"
+          fi

@@ -5,6 +5,6 @@
     <address class="l-white-text">{{ locationAddress() }}</address>
   </div>
   <div class="background">
-    <img src="{{ locationImage() }}" alt="" />
+    <img src="{{ locationImage() }}" [alt]="locationName()" />
   </div>
 </a>

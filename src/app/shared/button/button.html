@@ -6,7 +6,7 @@
     }
   </a>
 } @else {
-  <button [class]="buttonStyle().class">
+  <button [class]="buttonStyle().class" [attr.aria-label]="text() || 'Button'">
     {{ text() }}
     @if (icon()) {
       <app-icon [name]="icon()!" [colorName]="buttonStyle().iconColor" />
