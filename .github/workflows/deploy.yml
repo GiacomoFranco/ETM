@@ -42,9 +42,9 @@ jobs:
       # ── 5. Verificar que el build generó los archivos HTML
       - name: Verificar output
         run: |
-          echo "=== Archivos en dist/browser ==="
-          find dist/browser -name "*.html" | head -30
-          echo "Total HTML files: $(find dist/browser -name '*.html' | wc -l)"
+          echo "=== Archivos en dist/ETM/browser ==="
+          find dist/ETM/browser -name "*.html" | head -30
+          echo "Total HTML files: $(find dist/ETM/browser -name '*.html' | wc -l)"
 
       # ── 6. Deploy por FTP a Colombia Hosting
       - name: Deploy FTP a Colombia Hosting
@@ -53,7 +53,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/browser/
+          local-dir: ./dist/ETM/browser/
           server-dir: /public_html/
           # Solo sube archivos que cambiaron (más rápido en builds frecuentes)
           dangerous-clean-slate: false
@@ -68,7 +68,7 @@ jobs:
         run: |
           if [ "${{ job.status }}" = "success" ]; then
             echo "✅ Deploy exitoso - $(date '+%Y-%m-%d %H:%M:%S UTC')"
-            echo "Rutas prerenderizadas: $(find dist/browser -name '*.html' | wc -l)"
+            echo "Rutas prerenderizadas: $(find dist/ETM/browser -name '*.html' | wc -l)"
           else
             echo "❌ El build o deploy falló - revisar logs"
           fi
