@@ -9,7 +9,7 @@ import { Faqs, TGeneralQuestionsResponse } from '@core/models';
   providedIn: 'root',
 })
 export class FaqsService {
-  private readonly baseUrl = '/etm-api/wp-json/api/v1';
+  private readonly baseUrl = '/api/wp-json/api/v1';
   private readonly httpClient = inject(HttpClient);
 
   getGeneralQuestions(): Observable<Faqs> {
