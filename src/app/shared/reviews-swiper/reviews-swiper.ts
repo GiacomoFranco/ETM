@@ -1,6 +1,10 @@
-import { Component, afterNextRender, input, signal } from '@angular/core';
+import { Component, afterNextRender, inject, input, signal } from '@angular/core';
+
+import { catchError, of } from 'rxjs';
 
 import { REVIEWS } from '@app/core/constants';
+import { Reviews } from '@core/models';
+import { ReviewsService } from '@core/services/reviews.service';
 
 import Swiper from 'swiper';
 import { Autoplay } from 'swiper/modules';
@@ -14,7 +18,11 @@ import { ReviewCard } from '../review-card/review-card';
   styleUrl: './reviews-swiper.scss',
 })
 export class ReviewsSwiper {
+  private readonly reviewsService = inject(ReviewsService);
+
   constructor() {
+    this.loadReviews();
+
     afterNextRender(() => {
       this.initSwiper();
     });
@@ -23,7 +31,7 @@ export class ReviewsSwiper {
   swiperID = input.required<string>();
   swiper = signal<Swiper | undefined>(undefined);
   reversedDirection = input<boolean>(false);
-  reviews = REVIEWS;
+  reviews: Reviews = REVIEWS;
 
   initSwiper(): void {
     this.swiper.set(
@@ -50,5 +58,15 @@ export class ReviewsSwiper {
         },
       }),
     );
+  }
+
+  private loadReviews(): void {
+    this.reviewsService
+      .getReviews()
+      .pipe(catchError(() => of(REVIEWS)))
+      .subscribe((reviews) => {
+        this.reviews = reviews;
+        this.swiper()?.update();
+      });
   }
 }

@@ -8,6 +8,4 @@
     <app-rating [rating]="rating()"></app-rating>
   </div>
 </div>
-<div class="review-content">
-  <p>{{ review() }}</p>
-</div>
+<div class="review-content" [innerHTML]="review()"></div>
