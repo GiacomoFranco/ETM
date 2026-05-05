@@ -9,7 +9,7 @@ import { Reviews, TReviewsResponse } from '@core/models';
   providedIn: 'root',
 })
 export class ReviewsService {
-  private readonly baseUrl = '/api/wp-json/api/v1';
+  private readonly baseUrl = 'https://admin.etmsas.com/wp-json/api/v1';
   private readonly httpClient = inject(HttpClient);
 
   getReviews(): Observable<Reviews> {
