@@ -30,10 +30,10 @@ section {
 
   .welder-layer {
     position: absolute;
-    right: 0;
-    bottom: -95px;
+    right: 0; // -87px
+    bottom: 0;
     z-index: 1;
-    width: 94vw;
+    width: 80vw;
     max-width: 100vw;
     height: auto;
     pointer-events: none;
