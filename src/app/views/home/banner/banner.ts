@@ -80,7 +80,7 @@ export class Banner {
     this.parallaxTrigger = ScrollTrigger.create({
       trigger: bannerElement,
       start: 'top top',
-      end: '80% top',
+      end: '200% top',
       scrub: true,
       invalidateOnRefresh: true,
       onUpdate: (self) => {
