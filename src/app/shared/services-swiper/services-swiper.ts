@@ -1,4 +1,5 @@
-import { Component, OnDestroy, afterNextRender, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, OnDestroy, OnInit, PLATFORM_ID, inject, signal } from '@angular/core';
 
 import { SERVICES } from '@app/core/constants';
 
@@ -13,27 +14,40 @@ import { ServiceCard } from '../service-card/service-card';
   templateUrl: './services-swiper.html',
   styleUrl: './services-swiper.scss',
 })
-export class ServicesSwiper implements OnDestroy {
+export class ServicesSwiper implements OnInit, OnDestroy {
   private readonly slideRevealDelayMs = 220;
+  private readonly platformId = inject(PLATFORM_ID);
   private firstSlideImageLoaded = false;
   private secondSlideImageLoaded = false;
   private secondSlideRevealTimer: ReturnType<typeof setTimeout> | undefined;
 
-  constructor() {
-    afterNextRender(() => {
-      this.initSwiper();
-    });
-  }
-
   swiper = signal<Swiper | undefined>(undefined);
   firstSlideVisible = signal<boolean>(false);
   secondSlideVisible = signal<boolean>(false);
-  swiperID: string = 'services';
+  swiperID: string = 'services-default';
   services = SERVICES;
 
-  initSwiper(): void {
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.initSwiper();
+    }
+  }
+
+  initSwiper(retries = 3): void {
+    const root = document.getElementById(this.swiperID);
+    const wrapper = root?.querySelector('.swiper-wrapper');
+
+    if (!root || !wrapper) {
+      if (retries > 0) {
+        requestAnimationFrame(() => this.initSwiper(retries - 1));
+      }
+      return;
+    }
+
+    this.swiper()?.destroy(true, true);
+
     this.swiper.set(
-      new Swiper(`#${this.swiperID}`, {
+      new Swiper(root, {
         slidesPerView: 1,
         slidesPerGroup: 1,
         spaceBetween: 10,
@@ -91,6 +105,8 @@ export class ServicesSwiper implements OnDestroy {
     if (this.secondSlideRevealTimer) {
       clearTimeout(this.secondSlideRevealTimer);
     }
+    this.swiper()?.destroy(true, true);
+    this.swiper.set(undefined);
   }
 
   private revealSlidesInSequence(): void {

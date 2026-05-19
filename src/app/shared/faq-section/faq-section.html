@@ -14,16 +14,18 @@
     title="Preguntas Frecuentes"
     buttonText="Preguntas Frecuentes"
     redirection="/sobre-nosotros" />
-  <div class="questions">
-    <div class="left-column column">
-      @for (faq of firstColumnFaqs; track $index) {
-        <app-single-question [question]="faq.question" [answer]="faq.answer" />
-      }
+  @if (!loading()) {
+    <div class="questions">
+      <div class="left-column column">
+        @for (faq of firstColumnFaqs; track $index) {
+          <app-single-question [question]="faq.question" [answer]="faq.answer" />
+        }
+      </div>
+      <div class="right-column column">
+        @for (faq of secondColumnFaqs; track $index) {
+          <app-single-question [question]="faq.question" [answer]="faq.answer" />
+        }
+      </div>
     </div>
-    <div class="right-column column">
-      @for (faq of secondColumnFaqs; track $index) {
-        <app-single-question [question]="faq.question" [answer]="faq.answer" />
-      }
-    </div>
-  </div>
+  }
 </section>

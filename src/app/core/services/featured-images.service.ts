@@ -5,11 +5,13 @@ import { Observable, map } from 'rxjs';
 
 import { GalleryImages, TGalleryResponse } from '@core/models';
 
+import { resolveApiBaseUrl } from './api-base-url.util';
+
 @Injectable({
   providedIn: 'root',
 })
 export class FeaturedImagesService {
-  private readonly baseUrl = 'https://admin.etmsas.com/wp-json/api/v1';
+  private readonly baseUrl = resolveApiBaseUrl();
   private readonly httpClient = inject(HttpClient);
 
   getFeaturedImages(): Observable<GalleryImages> {

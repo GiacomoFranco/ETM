@@ -1,10 +1,13 @@
 <a class="card-info" [routerLink]="'/servicios/' + service().slug">
   <img
     class="card-image"
-    [src]="imageOrientation() === 'vertical' ? service().verticalImage : service().horizontalImage"
+    [ngSrc]="
+      imageOrientation() === 'vertical' ? service().verticalImage : service().horizontalImage
+    "
     [alt]="service().title"
     (load)="onImageLoad()"
     loading="lazy"
-    decoding="async" />
+    decoding="async"
+    fill />
   <h4 class="l-white-text">{{ service().title }}</h4>
 </a>

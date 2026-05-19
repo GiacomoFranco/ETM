@@ -1,5 +1,17 @@
-import { isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, PLATFORM_ID, inject, input, signal } from '@angular/core';
+import { NgOptimizedImage, isPlatformBrowser } from '@angular/common';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  OnInit,
+  PLATFORM_ID,
+  inject,
+  input,
+  signal,
+} from '@angular/core';
+
+import { catchError, of } from 'rxjs';
 
 import { GALLERY_IMAGES } from '@app/core/constants';
 import { FeaturedImagesService } from '@app/core/services/featured-images.service';
@@ -10,15 +22,15 @@ import { Autoplay } from 'swiper/modules';
 
 @Component({
   selector: 'app-galery-swiper',
-  imports: [GaleryPreview],
+  imports: [GaleryPreview, NgOptimizedImage],
   templateUrl: './galery-swiper.html',
   styleUrl: './galery-swiper.scss',
 })
-export class GalerySwiper implements AfterViewInit {
+export class GalerySwiper implements OnInit {
   private readonly featuredImagesService = inject(FeaturedImagesService);
   private readonly platformId = inject(PLATFORM_ID);
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.loadFeaturedImages();
     }
@@ -29,6 +41,14 @@ export class GalerySwiper implements AfterViewInit {
   images = GALLERY_IMAGES;
   isPreviewOpen = signal(false);
   activeIndex = signal(0);
+  loading = signal(true);
+
+  imageLoaded(event: Event) {
+    const target = event.target as HTMLImageElement;
+    const parentNode = target.parentNode as HTMLImageElement;
+
+    parentNode.classList.add('visible');
+  }
 
   openPreview(imageIndex: number): void {
     this.activeIndex.set(imageIndex);
@@ -44,13 +64,30 @@ export class GalerySwiper implements AfterViewInit {
   }
 
   private loadFeaturedImages(): void {
-    this.featuredImagesService.getFeaturedImages().subscribe((images) => {
-      this.images = images;
-      setTimeout(() => this.initSwiper(), 100);
-    });
+    this.featuredImagesService
+      .getFeaturedImages()
+      .pipe(catchError(() => of(GALLERY_IMAGES)))
+      .subscribe((images) => {
+        this.images = images;
+        this.loading.set(false);
+
+        setTimeout(() => {
+          this.initSwiper();
+        }, 0);
+      });
   }
 
-  initSwiper(): void {
+  initSwiper(retries = 3): void {
+    const root = document.getElementById(this.swiperID());
+    const wrapper = root?.querySelector('.swiper-wrapper');
+
+    if (!root || !wrapper) {
+      if (retries > 0) requestAnimationFrame(() => this.initSwiper(retries - 1));
+      return;
+    }
+
+    this.swiper()?.destroy(true, true);
+
     this.swiper.set(
       new Swiper(`#${this.swiperID()}`, {
         slidesPerView: 1,

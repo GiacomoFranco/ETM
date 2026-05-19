@@ -19,12 +19,11 @@ import { ReviewCard } from '../review-card/review-card';
 })
 export class ReviewsSwiper {
   private readonly reviewsService = inject(ReviewsService);
+  loading = signal(true);
 
   constructor() {
-    this.loadReviews();
-
     afterNextRender(() => {
-      this.initSwiper();
+      this.loadReviews();
     });
   }
 
@@ -33,7 +32,17 @@ export class ReviewsSwiper {
   reversedDirection = input<boolean>(false);
   reviews: Reviews = REVIEWS;
 
-  initSwiper(): void {
+  initSwiper(retries = 3): void {
+    const root = document.getElementById(this.swiperID());
+    const wrapper = root?.querySelector('.swiper-wrapper');
+
+    if (!root || !wrapper) {
+      if (retries > 0) requestAnimationFrame(() => this.initSwiper(retries - 1));
+      return;
+    }
+
+    this.swiper()?.destroy(true, true);
+
     this.swiper.set(
       new Swiper(`#${this.swiperID()}`, {
         slidesPerView: 1,
@@ -66,7 +75,8 @@ export class ReviewsSwiper {
       .pipe(catchError(() => of(REVIEWS)))
       .subscribe((reviews) => {
         this.reviews = reviews;
-        this.swiper()?.update();
+        this.loading.set(false);
+        setTimeout(() => this.initSwiper(), 0);
       });
   }
 }

@@ -1,10 +1,7 @@
 {
-  "/etm-api": {
+  "/wp-json": {
     "target": "https://admin.etmsas.com",
     "secure": true,
-    "changeOrigin": true,
-    "pathRewrite": {
-      "^/etm-api": "api"
-    }
+    "changeOrigin": true
   }
 }

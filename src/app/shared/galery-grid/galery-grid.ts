@@ -1,5 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 
+import { catchError, of } from 'rxjs';
+
 import { GALLERY_IMAGES } from '@app/core/constants';
 import { GalleryService } from '@app/core/services/gallery.service';
 import { GaleryPreview } from '@app/shared';
@@ -38,8 +40,11 @@ export class GaleryGrid {
   }
 
   private loadGalleryImages(): void {
-    this.galleryService.getGalleryImages().subscribe((images) => {
-      this.images = images;
-    });
+    this.galleryService
+      .getGalleryImages()
+      .pipe(catchError(() => of(GALLERY_IMAGES)))
+      .subscribe((images) => {
+        this.images = images;
+      });
   }
 }

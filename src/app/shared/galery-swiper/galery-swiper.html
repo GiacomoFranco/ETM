@@ -1,11 +1,18 @@
 <div class="swiper" [id]="swiperID()">
-  <div class="swiper-wrapper">
-    @for (image of images; track image.src; let index = $index) {
-      <div class="swiper-slide">
-        <img [src]="image.src" [alt]="image.alt" (click)="openPreview(index)" />
-      </div>
-    }
-  </div>
+  @if (!loading()) {
+    <div class="swiper-wrapper">
+      @for (image of images; track image.src; let index = $index) {
+        <div class="swiper-slide">
+          <img
+            [ngSrc]="image.src"
+            [alt]="image.alt"
+            (click)="openPreview(index)"
+            (load)="imageLoaded($event)"
+            fill />
+        </div>
+      }
+    </div>
+  }
 </div>
 
 <app-galery-preview

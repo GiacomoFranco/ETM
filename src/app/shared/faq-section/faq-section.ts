@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 
 import { catchError, of } from 'rxjs';
 
@@ -17,23 +17,27 @@ import { SingleQuestion } from '../single-question/single-question';
 export class FaqSection {
   private readonly faqsService = inject(FaqsService);
 
-  faqs = FAQS;
+  faqs = signal(FAQS);
+  loading = signal(true);
 
-  firstColumnFaqs = this.faqs.slice(0, 4);
-  secondColumnFaqs = this.faqs.slice(4);
+  firstColumnFaqs = this.faqs().slice(0, 4);
+  secondColumnFaqs = this.faqs().slice(4);
 
-  constructor() {
+  ngOnInit() {
     this.loadFaqs();
   }
+
+  constructor() {}
 
   private loadFaqs(): void {
     this.faqsService
       .getGeneralQuestions()
       .pipe(catchError(() => of(FAQS)))
       .subscribe((faqs) => {
-        this.faqs = faqs;
-        this.firstColumnFaqs = this.faqs.slice(0, 4);
-        this.secondColumnFaqs = this.faqs.slice(4);
+        this.faqs.set(faqs);
+        this.loading.set(false);
+        this.firstColumnFaqs = this.faqs().slice(0, 4);
+        this.secondColumnFaqs = this.faqs().slice(4);
       });
   }
 }
