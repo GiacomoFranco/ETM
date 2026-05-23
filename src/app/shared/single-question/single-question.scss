@@ -17,17 +17,17 @@
       background-color: var(--light-white);
 
       &.active {
-        background-color: #d7d7d7;
+        background-color: #E3E3E3;
 
         .question-title {
           h2 {
-            color: var(--dark-gray);
+            color: var(--main-black);
           }
         }
 
         .question-answer {
           p {
-            color: var(--darker-gray);
+            color: #656567;
           }
         }
       }
@@ -60,10 +60,11 @@
       color: var(--main-black);
       opacity: 0;
       transition: all 0.3s ease-in-out;
-
+      user-select: none;
+      
       p {
+        cursor: pointer;
         margin-top: 2.2rem;
-        cursor: text;
         font-size: clamp(1.8rem, 2.6cqi, 2rem);
         font-weight: 400;
         line-height: clamp(2rem, 2.6cqi, 2.1rem);
@@ -84,7 +85,7 @@
       }
 
       .question-answer {
-        opacity: 0.62;
+        opacity: 1;
       }
     }
   }

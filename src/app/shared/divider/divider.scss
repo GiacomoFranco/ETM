@@ -5,17 +5,13 @@
   gap: 4.1rem;
 }
 
-h4 {
+.h4 {
   flex: 0 0 content;
   font-size: 2.7rem;
   font-weight: 400;
 
-  &.white {
+  &.white, &.black{
     color: var(--dark-gray);
-  }
-
-  &.black {
-    color: var(--main-gray);
   }
 }
 

@@ -31,13 +31,13 @@
     flex-direction: column;
     gap: 0.3rem;
 
-    h5 {
+    .client-name {
       color: var(--main-black);
       font-size: 1.9rem;
       font-weight: 300;
     }
 
-    p {
+    .client-role {
       color: var(--darker-gray);
       font-size: 1.7rem;
       font-weight: 300;

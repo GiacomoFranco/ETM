@@ -4,10 +4,10 @@
     [ngSrc]="
       imageOrientation() === 'vertical' ? service().verticalImage : service().horizontalImage
     "
-    [alt]="service().title"
+    [alt]="service().title + 'service'"
     (load)="onImageLoad()"
     loading="lazy"
     decoding="async"
     fill />
-  <h4 class="l-white-text">{{ service().title }}</h4>
+  <h3 class="l-white-text">{{ service().title }}</h3>
 </a>

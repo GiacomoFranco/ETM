@@ -64,8 +64,8 @@
               list-style: none;
 
               a {
-                color: #4c4d4e;
-                font-weight: 500;
+                color: var(--dark-gray);
+                font-weight: 300;
                 text-decoration: none;
               }
             }
@@ -100,7 +100,7 @@
       font-size: inherit;
       font-weight: 400;
       line-height: 1.6rem;
-      opacity: 0.5;
+      opacity: 0.8;
 
       span {
         color: var(--main-white);

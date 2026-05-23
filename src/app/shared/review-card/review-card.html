@@ -3,8 +3,8 @@
     <img [src]="clientImage()" [alt]="clientName()" />
   </div>
   <div class="client-info">
-    <h5>{{ clientName() }}</h5>
-    <p>{{ clientRole() }}</p>
+    <p class="client-name">{{ clientName() }}</p>
+    <p class="client-role">{{ clientRole() }}</p>
     <app-rating [rating]="rating()"></app-rating>
   </div>
 </div>
