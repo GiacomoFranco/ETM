@@ -16,6 +16,12 @@
     &.white-variant {
       background-color: var(--light-white);
 
+        .question-title {
+          h2 {
+            color: #757575;
+          }
+        }
+
       &.active {
         background-color: #E3E3E3;
 
@@ -40,7 +46,7 @@
       gap: 3rem;
 
       h2 {
-        color: #757575;
+        color: var(--dark-gray);
         font-size: clamp(2rem, 2.6cqi, 2.5rem);
         font-weight: 400;
         line-height: clamp(2.1rem, 2.6cqi, 2.6rem);
