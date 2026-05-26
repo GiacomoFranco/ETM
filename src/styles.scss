@@ -74,7 +74,7 @@ h2 {
   @include custom-text(var(--fs-900), var(--fs-900));
 }
 
-h3 {
+h3, .h3 {
   @include custom-text(var(--fs-850), var(--fs-850));
 }
 
