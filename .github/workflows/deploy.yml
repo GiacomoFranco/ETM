@@ -20,11 +20,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # ── 2. Setup Node.js (Angular 20 requiere Node 20+)
+      # ── 2. Setup Node.js (Angular 22 requiere Node 22+)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       # ── 3. Instalar dependencias
@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       # ── 4. Build + Prerender (SSG)
-      #       Angular 20 con @angular/ssr descubre las rutas automáticamente
+      #       Angular 22 con @angular/ssr descubre las rutas automáticamente
       #       desde app.routes.ts — no se necesita routesFile
       - name: Build Angular (SSG + prerender)
         run: npx ng build --configuration production
