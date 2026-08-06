@@ -1,6 +1,9 @@
 name: Build & Deploy Angular
 
 on:
+  # ── Permite la ejecución manual desde la interfaz de GitHub
+  workflow_dispatch:
+
   # ── Disparado por push a main (cambios de código)
   push:
     branches:
