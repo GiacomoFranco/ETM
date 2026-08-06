@@ -3,6 +3,7 @@ import { Component, afterNextRender, inject, input, signal } from '@angular/core
 import { catchError, of } from 'rxjs';
 
 import { REVIEWS } from '@app/core/constants';
+import { scheduleIdleTask } from '@app/core/services/schedule-idle-task.util';
 import { Reviews } from '@core/models';
 import { ReviewsService } from '@core/services/reviews.service';
 
@@ -76,7 +77,7 @@ export class ReviewsSwiper {
       .subscribe((reviews) => {
         this.reviews = reviews;
         this.loading.set(false);
-        setTimeout(() => this.initSwiper(), 0);
+        scheduleIdleTask(() => this.initSwiper());
       });
   }
 }

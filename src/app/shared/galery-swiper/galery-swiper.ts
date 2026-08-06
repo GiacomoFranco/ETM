@@ -15,6 +15,7 @@ import { catchError, of } from 'rxjs';
 
 import { GALLERY_IMAGES } from '@app/core/constants';
 import { FeaturedImagesService } from '@app/core/services/featured-images.service';
+import { scheduleIdleTask } from '@app/core/services/schedule-idle-task.util';
 import { GaleryPreview } from '@app/shared';
 
 import Swiper from 'swiper';
@@ -71,9 +72,7 @@ export class GalerySwiper implements OnInit {
         this.images = images;
         this.loading.set(false);
 
-        setTimeout(() => {
-          this.initSwiper();
-        }, 0);
+        scheduleIdleTask(() => this.initSwiper());
       });
   }
 

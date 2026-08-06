@@ -2,6 +2,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { Component, OnDestroy, OnInit, PLATFORM_ID, inject, signal } from '@angular/core';
 
 import { SERVICES } from '@app/core/constants';
+import { scheduleIdleTask } from '@app/core/services/schedule-idle-task.util';
 
 import Swiper from 'swiper';
 import { Autoplay } from 'swiper/modules';
@@ -23,7 +24,7 @@ export class ServicesSwiperVariant implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.initSwiper();
+      scheduleIdleTask(() => this.initSwiper());
     }
   }
 

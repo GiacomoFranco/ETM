@@ -14,6 +14,8 @@ import {
 
 import { Subscription } from 'rxjs';
 
+import { scheduleIdleTask } from '@app/core/services/schedule-idle-task.util';
+
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -60,9 +62,11 @@ export class Timeline {
     }
 
     afterNextRender(() => {
-      this.createTimelineScroll();
-      this.updateDotCenters();
-      this.dotRefsChangeSub = this.dotRefs?.changes.subscribe(() => this.updateDotCenters());
+      scheduleIdleTask(() => {
+        this.createTimelineScroll();
+        this.updateDotCenters();
+        this.dotRefsChangeSub = this.dotRefs?.changes.subscribe(() => this.updateDotCenters());
+      });
     });
 
     this.destroyRef.onDestroy(() => {

@@ -1,5 +1,7 @@
 import { Component, afterNextRender, signal } from '@angular/core';
 
+import { scheduleIdleTask } from '@app/core/services/schedule-idle-task.util';
+
 import Swiper from 'swiper';
 import { Autoplay } from 'swiper/modules';
 
@@ -14,7 +16,7 @@ import { LocationCard } from './location-card/location-card';
 export class LocationsSwiper {
   constructor() {
     afterNextRender(() => {
-      this.initSwiper();
+      scheduleIdleTask(() => this.initSwiper());
     });
   }
 
