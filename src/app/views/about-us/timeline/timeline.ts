@@ -3,16 +3,12 @@ import {
   DestroyRef,
   ElementRef,
   HostListener,
-  QueryList,
   ViewChild,
-  ViewChildren,
   afterNextRender,
   computed,
   inject,
   signal,
 } from '@angular/core';
-
-import { Subscription } from 'rxjs';
 
 import { scheduleIdleTask } from '@app/core/services/schedule-idle-task.util';
 
@@ -30,14 +26,17 @@ import { TimelineMilestone } from './timeline.model';
 })
 export class Timeline {
   @ViewChild('pinRef') pinRef?: ElementRef<HTMLElement>;
-  @ViewChild('trackRef') trackRef?: ElementRef<HTMLElement>;
-  @ViewChildren('dotRef') dotRefs?: QueryList<ElementRef<HTMLElement>>;
+  @ViewChild('headerRef') headerRef?: ElementRef<HTMLElement>;
+  @ViewChild('pointsRef') pointsRef?: ElementRef<HTMLElement>;
 
   private readonly destroyRef = inject(DestroyRef);
   private readonly isBrowser = typeof window !== 'undefined';
   private scrollTrigger: ScrollTrigger | undefined;
+  private layoutResizeObserver: ResizeObserver | undefined;
   private resizeTimeout: ReturnType<typeof setTimeout> | undefined;
-  private dotRefsChangeSub: Subscription | undefined;
+  private layoutWidth = 0;
+  private layoutGap = 0;
+  private layoutPadding = 0;
 
   readonly milestones: TimelineMilestone[] = TIMELINE_MILESTONES;
 
@@ -63,15 +62,14 @@ export class Timeline {
 
     afterNextRender(() => {
       scheduleIdleTask(() => {
+        this.setupLayoutObserver();
         this.createTimelineScroll();
-        this.updateDotCenters();
-        this.dotRefsChangeSub = this.dotRefs?.changes.subscribe(() => this.updateDotCenters());
       });
     });
 
     this.destroyRef.onDestroy(() => {
       this.destroyTimelineScroll();
-      this.dotRefsChangeSub?.unsubscribe();
+      this.layoutResizeObserver?.disconnect();
       if (this.resizeTimeout) {
         clearTimeout(this.resizeTimeout);
       }
@@ -100,7 +98,6 @@ export class Timeline {
     this.resizeTimeout = setTimeout(() => {
       this.visiblePoints.set(this.getVisiblePoints(this.getViewportWidth()));
       this.createTimelineScroll();
-      this.updateDotCenters();
     }, 120);
   }
 
@@ -138,36 +135,83 @@ export class Timeline {
     });
 
     ScrollTrigger.refresh();
-    this.updateDotCenters();
   }
 
-  private updateDotCenters(): void {
+  private setupLayoutObserver(): void {
     if (!this.isBrowser) {
       return;
     }
 
-    const trackElement = this.trackRef?.nativeElement;
-    const dots = this.dotRefs?.toArray() ?? [];
+    const headerElement = this.headerRef?.nativeElement;
+    const pointsElement = this.pointsRef?.nativeElement;
 
-    if (!trackElement || !dots.length) {
+    if (!headerElement || !pointsElement) {
       return;
     }
 
-    requestAnimationFrame(() => {
-      const trackRect = trackElement.getBoundingClientRect();
-      if (!trackRect.width) {
-        return;
-      }
+    this.layoutResizeObserver?.disconnect();
+    this.layoutResizeObserver = new ResizeObserver(([entry]) => {
+      this.layoutWidth = entry.contentRect.width;
 
-      const centers = dots.map((dotRef) => {
-        const dotRect = dotRef.nativeElement.getBoundingClientRect();
-        const centerX = dotRect.left + dotRect.width / 2;
-        const percent = ((centerX - trackRect.left) / trackRect.width) * 100;
-        return Math.min(Math.max(percent, 0), 100);
-      });
+      const headerStyles = getComputedStyle(headerElement);
+      const pointsStyles = getComputedStyle(pointsElement);
+      const dotWidth = this.parseRemValue(headerStyles.getPropertyValue('--dot-width'));
+      const activeDotWidth = this.parseRemValue(
+        headerStyles.getPropertyValue('--active-dot-width'),
+      );
+      this.layoutGap = parseFloat(pointsStyles.columnGap || pointsStyles.gap || '0');
+      this.layoutPadding = Math.max((activeDotWidth - dotWidth) / 2, 0);
 
-      this.dotCenterPercents.set(centers);
+      this.updateDotCenters();
     });
+
+    this.layoutResizeObserver.observe(headerElement);
+  }
+
+  private updateDotCenters(): void {
+    if (!this.isBrowser || !this.layoutWidth) {
+      return;
+    }
+
+    const totalPoints = this.milestones.length;
+    if (!totalPoints) {
+      return;
+    }
+
+    const totalWidth = this.layoutWidth + this.layoutPadding * 2;
+    const itemWidth = (this.layoutWidth - this.layoutGap * (totalPoints - 1)) / totalPoints;
+
+    if (
+      !Number.isFinite(totalWidth) ||
+      totalWidth <= 0 ||
+      !Number.isFinite(itemWidth) ||
+      itemWidth <= 0
+    ) {
+      return;
+    }
+
+    const centers = Array.from({ length: totalPoints }, (_, index) => {
+      const centerX = this.layoutPadding + index * (itemWidth + this.layoutGap) + itemWidth / 2;
+      const percent = (centerX / totalWidth) * 100;
+      return Math.min(Math.max(percent, 0), 100);
+    });
+
+    this.dotCenterPercents.set(centers);
+  }
+
+  private parseRemValue(value: string): number {
+    const trimmedValue = value.trim();
+
+    if (!trimmedValue) {
+      return 0;
+    }
+
+    if (trimmedValue.endsWith('rem')) {
+      const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      return parseFloat(trimmedValue) * rootFontSize;
+    }
+
+    return parseFloat(trimmedValue);
   }
 
   private destroyTimelineScroll(): void {

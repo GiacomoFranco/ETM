@@ -10,13 +10,14 @@
   </article>
 
   <article class="timeline-stage">
-    <header class="timeline-header">
-      <div class="track" #trackRef aria-hidden="true">
+    <header class="timeline-header" #headerRef>
+      <div class="track" aria-hidden="true">
         <span class="track-progress" [style.width.%]="progressWidth()"></span>
       </div>
 
       <div
         class="year-points"
+        #pointsRef
         role="list"
         aria-label="Línea de tiempo de ETM"
         [style.--point-count]="milestones.length">
