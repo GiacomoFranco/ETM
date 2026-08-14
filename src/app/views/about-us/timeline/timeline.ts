@@ -12,7 +12,7 @@ import {
 
 import { scheduleIdleTask } from '@app/core/services/schedule-idle-task.util';
 
-import gsap from 'gsap';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { TIMELINE_MILESTONES } from './timeline.constant';
